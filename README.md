@@ -5,7 +5,7 @@
 3. Run `npm run app` which will deploy the client and server side simulatenously.
 4. The website can be viewed on [localhost:3000](localhost:3000)
 
-# Features
+## Features
 
 1. Sentiment analysis to deliver good news.
 2. Automated scheduling via node-cron.
