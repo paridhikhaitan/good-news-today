@@ -1,0 +1,6894 @@
+/*!
+ * Author : Matteo Bruni - https://www.matteobruni.it
+ * MIT license: https://opensource.org/licenses/MIT
+ * Demo / Generator : https://particles.matteobruni.it/
+ * GitHub : https://www.github.com/matteobruni/tsparticles
+ * How to use? : Check the GitHub README
+ * v1.13.5
+ */
+(function(e, a) { for(var i in a) e[i] = a[i]; }(window, /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, "tsParticles", function() { return /* binding */ tsParticles; });
+
+// CONCATENATED MODULE: ./node_modules/tslib/tslib.es6.js
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation. All rights reserved.
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at http://www.apache.org/licenses/LICENSE-2.0
+
+THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+MERCHANTABLITY OR NON-INFRINGEMENT.
+
+See the Apache Version 2.0 License for specific language governing permissions
+and limitations under the License.
+***************************************************************************** */
+/* global Reflect, Promise */
+
+var extendStatics = function(d, b) {
+    extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return extendStatics(d, b);
+};
+
+function __extends(d, b) {
+    extendStatics(d, b);
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+}
+
+var __assign = function() {
+    __assign = Object.assign || function __assign(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+        return t;
+    }
+    return __assign.apply(this, arguments);
+}
+
+function __rest(s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+}
+
+function __decorate(decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+}
+
+function __param(paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+}
+
+function __metadata(metadataKey, metadataValue) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+}
+
+function __awaiter(thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+}
+
+function __generator(thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+}
+
+function __exportStar(m, exports) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+
+function __values(o) {
+    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+    if (m) return m.call(o);
+    if (o && typeof o.length === "number") return {
+        next: function () {
+            if (o && i >= o.length) o = void 0;
+            return { value: o && o[i++], done: !o };
+        }
+    };
+    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+}
+
+function __read(o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        }
+        finally { if (e) throw e.error; }
+    }
+    return ar;
+}
+
+function __spread() {
+    for (var ar = [], i = 0; i < arguments.length; i++)
+        ar = ar.concat(__read(arguments[i]));
+    return ar;
+}
+
+function __spreadArrays() {
+    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+            r[k] = a[j];
+    return r;
+};
+
+function __await(v) {
+    return this instanceof __await ? (this.v = v, this) : new __await(v);
+}
+
+function __asyncGenerator(thisArg, _arguments, generator) {
+    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+    function step(r) { r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+    function fulfill(value) { resume("next", value); }
+    function reject(value) { resume("throw", value); }
+    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+}
+
+function __asyncDelegator(o) {
+    var i, p;
+    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
+}
+
+function __asyncValues(o) {
+    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+    var m = o[Symbol.asyncIterator], i;
+    return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+}
+
+function __makeTemplateObject(cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+
+function __importStar(mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result.default = mod;
+    return result;
+}
+
+function __importDefault(mod) {
+    return (mod && mod.__esModule) ? mod : { default: mod };
+}
+
+function __classPrivateFieldGet(receiver, privateMap) {
+    if (!privateMap.has(receiver)) {
+        throw new TypeError("attempted to get private field on non-instance");
+    }
+    return privateMap.get(receiver);
+}
+
+function __classPrivateFieldSet(receiver, privateMap, value) {
+    if (!privateMap.has(receiver)) {
+        throw new TypeError("attempted to set private field on non-instance");
+    }
+    privateMap.set(receiver, value);
+    return value;
+}
+
+// CONCATENATED MODULE: ./dist/Classes/Utils/Constants.js
+class Constants {}
+Constants.canvasClass = "tsparticles-canvas-el";
+Constants.randomColorValue = "random";
+Constants.midColorValue = "mid";
+Constants.touchEndEvent = "touchend";
+Constants.mouseUpEvent = "mouseup";
+Constants.mouseMoveEvent = "mousemove";
+Constants.touchStartEvent = "touchstart";
+Constants.touchMoveEvent = "touchmove";
+Constants.mouseLeaveEvent = "mouseleave";
+Constants.touchCancelEvent = "touchcancel";
+Constants.resizeEvent = "resize";
+Constants.visibilityChangeEvent = "visibilitychange";
+Constants.noPolygonDataLoaded = "No polygon data loaded.";
+Constants.noPolygonFound = "No polygon found, you need to specify SVG url in config.";
+// CONCATENATED MODULE: ./dist/Enums/MoveDirection.js
+var MoveDirection;
+
+(function (MoveDirection) {
+  MoveDirection["bottom"] = "bottom";
+  MoveDirection["bottomLeft"] = "bottom-left";
+  MoveDirection["bottomRight"] = "bottom-right";
+  MoveDirection["left"] = "left";
+  MoveDirection["none"] = "none";
+  MoveDirection["right"] = "right";
+  MoveDirection["top"] = "top";
+  MoveDirection["topLeft"] = "top-left";
+  MoveDirection["topRight"] = "top-right";
+})(MoveDirection || (MoveDirection = {}));
+// CONCATENATED MODULE: ./dist/Classes/Utils/Utils.js
+
+
+class Utils_Utils {
+  static clamp(num, min, max) {
+    return Math.min(Math.max(num, min), max);
+  }
+
+  static isInArray(value, array) {
+    return value === array || array instanceof Array && array.indexOf(value) > -1;
+  }
+
+  static mix(comp1, comp2, weight1, weight2) {
+    return Math.floor((comp1 * weight1 + comp2 * weight2) / (weight1 + weight2));
+  }
+
+  static getParticleBaseVelocity(particle) {
+    let velocityBase;
+
+    switch (particle.direction) {
+      case MoveDirection.top:
+        velocityBase = {
+          x: 0,
+          y: -1
+        };
+        break;
+
+      case MoveDirection.topRight:
+        velocityBase = {
+          x: 0.5,
+          y: -0.5
+        };
+        break;
+
+      case MoveDirection.right:
+        velocityBase = {
+          x: 1,
+          y: -0
+        };
+        break;
+
+      case MoveDirection.bottomRight:
+        velocityBase = {
+          x: 0.5,
+          y: 0.5
+        };
+        break;
+
+      case MoveDirection.bottom:
+        velocityBase = {
+          x: 0,
+          y: 1
+        };
+        break;
+
+      case MoveDirection.bottomLeft:
+        velocityBase = {
+          x: -0.5,
+          y: 1
+        };
+        break;
+
+      case MoveDirection.left:
+        velocityBase = {
+          x: -1,
+          y: 0
+        };
+        break;
+
+      case MoveDirection.topLeft:
+        velocityBase = {
+          x: -0.5,
+          y: -0.5
+        };
+        break;
+
+      default:
+        velocityBase = {
+          x: 0,
+          y: 0
+        };
+        break;
+    }
+
+    return velocityBase;
+  }
+
+  static getDistanceBetweenCoordinates(pointA, pointB) {
+    const dx = pointA.x - pointB.x;
+    const dy = pointA.y - pointB.y;
+    return Math.sqrt(dx * dx + dy * dy);
+  }
+
+  static loadFont(character) {
+    return __awaiter(this, void 0, void 0, function* () {
+      try {
+        yield document.fonts.load(`${character.weight} 36px '${character.font}'`);
+      } catch (_a) {}
+    });
+  }
+
+  static arrayRandomIndex(array) {
+    return Math.floor(Math.random() * array.length);
+  }
+
+  static itemFromArray(array, index) {
+    return array[index !== undefined ? index : this.arrayRandomIndex(array)];
+  }
+
+  static randomInRange(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+
+  static isPointInside(point, size, radius) {
+    return this.areBoundsInside(this.calculateBounds(point, radius !== null && radius !== void 0 ? radius : 0), size);
+  }
+
+  static areBoundsInside(bounds, size) {
+    return bounds.left < size.width && bounds.right > 0 && bounds.top < size.height && bounds.bottom > 0;
+  }
+
+  static calculateBounds(point, radius) {
+    return {
+      bottom: point.y + radius,
+      left: point.x - radius,
+      right: point.x + radius,
+      top: point.y - radius
+    };
+  }
+
+  static loadImage(optionsImage) {
+    return new Promise((resolve, reject) => {
+      const src = optionsImage.src;
+      const image = {
+        type: src.substr(src.length - 3)
+      };
+
+      if (optionsImage.src) {
+        const img = new Image();
+        img.addEventListener("load", () => {
+          image.obj = img;
+          resolve(image);
+        });
+        img.addEventListener("error", () => {
+          reject(`Error tsParticles - loading image: ${optionsImage.src}`);
+        });
+        img.src = optionsImage.src;
+      } else {
+        reject("Error tsParticles - No image.src");
+      }
+    });
+  }
+
+  static deepExtend(destination, source) {
+    var _a;
+
+    destination = destination !== null && destination !== void 0 ? destination : {};
+
+    for (const property in source) {
+      if (source[property] && source[property].constructor && source[property].constructor === Object) {
+        destination[property] = (_a = destination[property]) !== null && _a !== void 0 ? _a : {};
+        Utils_Utils.deepExtend(destination[property], source[property]);
+      } else {
+        destination[property] = source[property];
+      }
+    }
+
+    return destination;
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Utils/ColorUtils.js
+
+
+class ColorUtils_ColorUtils {
+  static colorToRgb(color) {
+    var _a, _b;
+
+    let res;
+
+    if (typeof color.value === "string") {
+      if (color.value === Constants.randomColorValue) {
+        res = {
+          b: Math.floor(Math.random() * 256),
+          g: Math.floor(Math.random() * 256),
+          r: Math.floor(Math.random() * 256)
+        };
+      } else {
+        res = ColorUtils_ColorUtils.stringToRgb(color.value);
+      }
+    } else {
+      if (color.value instanceof Array) {
+        const colorSelected = Utils_Utils.itemFromArray(color.value);
+        res = ColorUtils_ColorUtils.stringToRgb(colorSelected);
+      } else {
+        const colorValue = color.value;
+        const rgbColor = (_a = colorValue.rgb) !== null && _a !== void 0 ? _a : color.value;
+
+        if (rgbColor.r !== undefined) {
+          res = rgbColor;
+        } else {
+          const hslColor = (_b = colorValue.hsl) !== null && _b !== void 0 ? _b : color.value;
+
+          if (hslColor.h !== undefined) {
+            res = ColorUtils_ColorUtils.hslToRgb(hslColor);
+          }
+        }
+      }
+    }
+
+    return res;
+  }
+
+  static stringToAlpha(input) {
+    var _a;
+
+    return (_a = ColorUtils_ColorUtils.stringToRgba(input)) === null || _a === void 0 ? void 0 : _a.a;
+  }
+
+  static stringToRgb(input) {
+    return ColorUtils_ColorUtils.stringToRgba(input);
+  }
+
+  static hslToRgb(hsl) {
+    const result = {
+      b: 0,
+      g: 0,
+      r: 0
+    };
+    const hslPercent = {
+      h: hsl.h > 1 ? hsl.h / 360 : hsl.h,
+      l: hsl.l > 1 ? hsl.l / 100 : hsl.l,
+      s: hsl.s > 1 ? hsl.s / 100 : hsl.s
+    };
+
+    if (hslPercent.s === 0) {
+      result.b = hslPercent.l;
+      result.g = hslPercent.l;
+      result.r = hslPercent.l;
+    } else {
+      const q = hslPercent.l < 0.5 ? hslPercent.l * (1 + hslPercent.s) : hslPercent.l + hslPercent.s - hslPercent.l * hslPercent.s;
+      const p = 2 * hslPercent.l - q;
+      result.r = ColorUtils_ColorUtils.hue2rgb(p, q, hslPercent.h + 1 / 3);
+      result.g = ColorUtils_ColorUtils.hue2rgb(p, q, hslPercent.h);
+      result.b = ColorUtils_ColorUtils.hue2rgb(p, q, hslPercent.h - 1 / 3);
+    }
+
+    result.r = Math.round(result.r * 255);
+    result.g = Math.round(result.g * 255);
+    result.b = Math.round(result.b * 255);
+    return result;
+  }
+
+  static hslaToRgba(hsla) {
+    const rgbResult = ColorUtils_ColorUtils.hslToRgb(hsla);
+    return {
+      a: hsla.a,
+      b: rgbResult.b,
+      g: rgbResult.g,
+      r: rgbResult.r
+    };
+  }
+
+  static getRandomRgbColor(min) {
+    var _a;
+
+    const fixedMin = min || 0;
+    const minColor = fixedMin + fixedMin * Math.pow(16, 2) + fixedMin * Math.pow(16, 4);
+    const factor = minColor ^ 0xFFFFFF;
+    const randomColor = Math.floor(Math.random() * factor | minColor).toString(16);
+    return (_a = this.stringToRgb(`#${randomColor}`)) !== null && _a !== void 0 ? _a : {
+      b: 0,
+      g: 0,
+      r: 0
+    };
+  }
+
+  static getStyleFromColor(color, opacity) {
+    const opacityValue = opacity !== null && opacity !== void 0 ? opacity : 1;
+    return `rgba(${Math.round(color.r)}, ${Math.round(color.g)}, ${Math.round(color.b)}, ${opacityValue})`;
+  }
+
+  static mix(color1, color2, size1, size2) {
+    return {
+      b: Utils_Utils.mix(color1.b, color2.b, size1, size2),
+      g: Utils_Utils.mix(color1.g, color2.g, size1, size2),
+      r: Utils_Utils.mix(color1.r, color2.r, size1, size2)
+    };
+  }
+
+  static hue2rgb(p, q, t) {
+    let tCalc = t;
+
+    if (tCalc < 0) {
+      tCalc += 1;
+    }
+
+    if (tCalc > 1) {
+      tCalc -= 1;
+    }
+
+    if (tCalc < 1 / 6) {
+      return p + (q - p) * 6 * tCalc;
+    }
+
+    if (tCalc < 1 / 2) {
+      return q;
+    }
+
+    if (tCalc < 2 / 3) {
+      return p + (q - p) * (2 / 3 - tCalc) * 6;
+    }
+
+    return p;
+  }
+
+  static stringToRgba(input) {
+    if (input.startsWith('rgb')) {
+      const regex = /rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*(,\s*([\d.]+)\s*)?\)/i;
+      const result = regex.exec(input);
+      return result ? {
+        a: result.length > 4 ? parseFloat(result[5]) : 1,
+        b: parseInt(result[3]),
+        g: parseInt(result[2]),
+        r: parseInt(result[1])
+      } : undefined;
+    } else if (input.startsWith('hsl')) {
+      const regex = /hsla?\(\s*(\d+)\s*,\s*(\d+)%\s*,\s*(\d+)%\s*(,\s*([\d.]+)\s*)?\)/i;
+      const result = regex.exec(input);
+      return result ? ColorUtils_ColorUtils.hslaToRgba({
+        a: result.length > 4 ? parseFloat(result[5]) : 1,
+        h: parseInt(result[1]),
+        l: parseInt(result[3]),
+        s: parseInt(result[2])
+      }) : undefined;
+    } else {
+      const shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])([a-f\d])?$/i;
+      const hexFixed = input.replace(shorthandRegex, (_m, r, g, b, a) => {
+        return r + r + g + g + b + b + (a !== undefined ? a + a : "");
+      });
+      const regex = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})?$/i;
+      const result = regex.exec(hexFixed);
+      return result ? {
+        a: result[4] !== undefined ? parseInt(result[4], 16) / 0xFF : 1,
+        b: parseInt(result[3], 16),
+        g: parseInt(result[2], 16),
+        r: parseInt(result[1], 16)
+      } : undefined;
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Utils/CanvasUtils.js
+
+class CanvasUtils_CanvasUtils {
+  static paintBase(context, dimension, baseColor) {
+    context.save();
+    context.fillStyle = baseColor !== null && baseColor !== void 0 ? baseColor : "rgba(0,0,0,0)";
+    context.fillRect(0, 0, dimension.width, dimension.height);
+    context.restore();
+  }
+
+  static clear(context, dimension) {
+    context.clearRect(0, 0, dimension.width, dimension.height);
+  }
+
+  static drawPolygonMask(context, rawData, stroke) {
+    const color = typeof stroke.color === "string" ? ColorUtils_ColorUtils.stringToRgb(stroke.color) : ColorUtils_ColorUtils.colorToRgb(stroke.color);
+
+    if (color) {
+      context.save();
+      context.beginPath();
+      context.moveTo(rawData[0].x, rawData[0].y);
+
+      for (let i = 1; i < rawData.length; i++) {
+        context.lineTo(rawData[i].x, rawData[i].y);
+      }
+
+      context.closePath();
+      context.strokeStyle = ColorUtils_ColorUtils.getStyleFromColor(color);
+      context.lineWidth = stroke.width;
+      context.stroke();
+      context.restore();
+    }
+  }
+
+  static drawPolygonMaskPath(context, path, stroke, position) {
+    context.save();
+    context.translate(position.x, position.y);
+    const color = typeof stroke.color === "string" ? ColorUtils_ColorUtils.stringToRgb(stroke.color) : ColorUtils_ColorUtils.colorToRgb(stroke.color);
+
+    if (color) {
+      context.strokeStyle = ColorUtils_ColorUtils.getStyleFromColor(color, stroke.opacity);
+      context.lineWidth = stroke.width;
+      context.stroke(path);
+    }
+
+    context.restore();
+  }
+
+  static drawAbsorber(context, absorber) {
+    context.save();
+    context.translate(absorber.position.x, absorber.position.y);
+    context.beginPath();
+    context.arc(0, 0, absorber.size, 0, Math.PI * 2, false);
+    context.closePath();
+    context.fillStyle = ColorUtils_ColorUtils.getStyleFromColor(absorber.color, absorber.opacity);
+    context.fill();
+    context.restore();
+  }
+
+  static drawLineLinked(context, width, begin, end, backgroundMask, colorLine, opacity, shadow) {
+    context.save();
+    context.lineWidth = width;
+    context.beginPath();
+    context.moveTo(begin.x, begin.y);
+    context.lineTo(end.x, end.y);
+    context.closePath();
+
+    if (backgroundMask) {
+      context.globalCompositeOperation = 'destination-out';
+    }
+
+    if (colorLine) {
+      context.strokeStyle = ColorUtils_ColorUtils.getStyleFromColor(colorLine, opacity);
+    }
+
+    const shadowColor = typeof shadow.color === "string" ? ColorUtils_ColorUtils.stringToRgb(shadow.color) : ColorUtils_ColorUtils.colorToRgb(shadow.color);
+
+    if (shadow.enable && shadowColor) {
+      context.shadowBlur = shadow.blur;
+      context.shadowColor = ColorUtils_ColorUtils.getStyleFromColor(shadowColor);
+    }
+
+    context.stroke();
+    context.restore();
+  }
+
+  static drawConnectLine(context, width, lineStyle, begin, end) {
+    context.save();
+    context.beginPath();
+    context.moveTo(begin.x, begin.y);
+    context.lineTo(end.x, end.y);
+    context.closePath();
+    context.lineWidth = width;
+    context.strokeStyle = lineStyle;
+    context.stroke();
+    context.restore();
+  }
+
+  static gradient(context, p1, p2, opacity) {
+    const gradStop = Math.floor(p2.size.value / p1.size.value);
+
+    if (!p1.color || !p2.color) {
+      return;
+    }
+
+    const sourcePos = {
+      x: p1.position.x + p1.offset.x,
+      y: p1.position.y + p1.offset.y
+    };
+    const destPos = {
+      x: p2.position.x + p2.offset.x,
+      y: p2.position.y + p2.offset.y
+    };
+    const midRgb = ColorUtils_ColorUtils.mix(p1.color, p2.color, p1.size.value, p2.size.value);
+    const grad = context.createLinearGradient(sourcePos.x, sourcePos.y, destPos.x, destPos.y);
+    grad.addColorStop(0, ColorUtils_ColorUtils.getStyleFromColor(p1.color, opacity));
+    grad.addColorStop(gradStop > 1 ? 1 : gradStop, ColorUtils_ColorUtils.getStyleFromColor(midRgb, opacity));
+    grad.addColorStop(1, ColorUtils_ColorUtils.getStyleFromColor(p2.color, opacity));
+    return grad;
+  }
+
+  static drawGrabLine(context, width, begin, end, colorLine, opacity) {
+    context.save();
+    context.beginPath();
+    context.moveTo(begin.x, begin.y);
+    context.lineTo(end.x, end.y);
+    context.closePath();
+    context.strokeStyle = ColorUtils_ColorUtils.getStyleFromColor(colorLine, opacity);
+    context.lineWidth = width;
+    context.stroke();
+    context.restore();
+  }
+
+  static drawParticle(context, particle, colorValue, backgroundMask, radius, opacity, shadow) {
+    const pos = {
+      x: particle.position.x + particle.offset.x,
+      y: particle.position.y + particle.offset.y
+    };
+    context.save();
+    context.translate(pos.x, pos.y);
+    context.beginPath();
+    const shadowColor = particle.shadowColor;
+
+    if (shadow.enable && shadowColor) {
+      context.shadowBlur = shadow.blur;
+      context.shadowColor = ColorUtils_ColorUtils.getStyleFromColor(shadowColor);
+      context.shadowOffsetX = shadow.offset.x;
+      context.shadowOffsetY = shadow.offset.y;
+    }
+
+    context.fillStyle = colorValue;
+
+    if (particle.angle !== 0) {
+      context.rotate(particle.angle * Math.PI / 180);
+    }
+
+    if (backgroundMask) {
+      context.globalCompositeOperation = "destination-out";
+    }
+
+    const stroke = particle.stroke;
+
+    if (stroke.width > 0 && particle.strokeColor) {
+      context.strokeStyle = ColorUtils_ColorUtils.getStyleFromColor(particle.strokeColor, particle.stroke.opacity);
+      context.lineWidth = stroke.width;
+    }
+
+    this.drawShape(context, particle, radius, opacity);
+
+    if (particle.close) {
+      context.closePath();
+    }
+
+    if (stroke.width > 0 && particle.strokeColor) {
+      context.stroke();
+    }
+
+    if (particle.fill) {
+      context.fill();
+    }
+
+    context.restore();
+  }
+
+  static addShapeDrawer(type, drawer) {
+    if (!this.drawers[type]) {
+      this.drawers[type] = drawer;
+    }
+  }
+
+  static drawShape(context, particle, radius, opacity) {
+    if (!particle.shape) {
+      return;
+    }
+
+    const drawer = this.drawers[particle.shape];
+
+    if (!drawer) {
+      return;
+    }
+
+    drawer.draw(context, particle, radius, opacity);
+  }
+
+}
+CanvasUtils_CanvasUtils.drawers = {};
+// CONCATENATED MODULE: ./dist/Classes/Canvas.js
+
+
+
+class Canvas_Canvas {
+  constructor(container) {
+    this.container = container;
+    this.size = {
+      height: 0,
+      width: 0
+    };
+    this.context = null;
+    this.generatedCanvas = false;
+  }
+
+  init() {
+    this.resize();
+    const container = this.container;
+    const options = container.options;
+    const cover = options.backgroundMask.cover;
+    const color = cover.color;
+    const trail = options.particles.move.trail;
+    this.coverColor = ColorUtils_ColorUtils.colorToRgb(color);
+    this.trailFillColor = ColorUtils_ColorUtils.colorToRgb(trail.fillColor);
+    this.paint();
+  }
+
+  loadCanvas(canvas, generatedCanvas) {
+    var _a;
+
+    if (!canvas.className) {
+      canvas.className = Constants.canvasClass;
+    }
+
+    if (this.generatedCanvas) {
+      (_a = this.element) === null || _a === void 0 ? void 0 : _a.remove();
+    }
+
+    this.generatedCanvas = generatedCanvas !== null && generatedCanvas !== void 0 ? generatedCanvas : false;
+    this.element = canvas;
+    this.size.height = canvas.offsetHeight;
+    this.size.width = canvas.offsetWidth;
+    this.context = this.element.getContext("2d");
+    this.container.retina.init();
+    this.initBackground();
+  }
+
+  destroy() {
+    var _a;
+
+    if (this.generatedCanvas) {
+      (_a = this.element) === null || _a === void 0 ? void 0 : _a.remove();
+    }
+
+    if (this.context) {
+      CanvasUtils_CanvasUtils.clear(this.context, this.size);
+    }
+  }
+
+  resize() {
+    if (this.element) {
+      this.element.width = this.size.width;
+      this.element.height = this.size.height;
+    }
+  }
+
+  paint() {
+    const container = this.container;
+    const options = container.options;
+
+    if (this.context) {
+      if (options.backgroundMask.enable && options.backgroundMask.cover && this.coverColor) {
+        this.paintBase(ColorUtils_ColorUtils.getStyleFromColor(this.coverColor));
+      } else {
+        this.paintBase();
+      }
+    }
+  }
+
+  clear() {
+    const container = this.container;
+    const options = container.options;
+    const trail = options.particles.move.trail;
+
+    if (options.backgroundMask.enable) {
+      this.paint();
+    } else if (trail.enable && trail.length > 0 && this.trailFillColor) {
+      this.paintBase(ColorUtils_ColorUtils.getStyleFromColor(this.trailFillColor, 1 / trail.length));
+    } else if (this.context) {
+      CanvasUtils_CanvasUtils.clear(this.context, this.size);
+    }
+  }
+
+  isPointInPath(path, point) {
+    var _a, _b;
+
+    return (_b = (_a = this.context) === null || _a === void 0 ? void 0 : _a.isPointInPath(path, point.x, point.y)) !== null && _b !== void 0 ? _b : false;
+  }
+
+  drawPolygonMask() {
+    const container = this.container;
+    const options = container.options;
+    const context = this.context;
+    const polygonDraw = options.polygon.draw;
+    const polygon = container.polygon;
+    const rawData = polygon.raw;
+
+    for (const path of polygon.paths) {
+      const path2d = path.path2d;
+      const path2dSupported = polygon.path2DSupported;
+
+      if (context) {
+        if (path2dSupported && path2d && polygon.offset) {
+          CanvasUtils_CanvasUtils.drawPolygonMaskPath(context, path2d, polygonDraw.stroke, polygon.offset);
+        } else if (rawData) {
+          CanvasUtils_CanvasUtils.drawPolygonMask(context, rawData, polygonDraw.stroke);
+        }
+      }
+    }
+  }
+
+  drawAbsorber(absorber) {
+    const ctx = this.context;
+
+    if (!ctx) {
+      return;
+    }
+
+    CanvasUtils_CanvasUtils.drawAbsorber(ctx, absorber);
+  }
+
+  drawLinkedLine(p1, p2, opacity) {
+    var _a;
+
+    const container = this.container;
+    const options = container.options;
+    const pos1 = {
+      x: p1.position.x + p1.offset.x,
+      y: p1.position.y + p1.offset.y
+    };
+    const pos2 = {
+      x: p2.position.x + p2.offset.x,
+      y: p2.position.y + p2.offset.y
+    };
+    const ctx = this.context;
+
+    if (!ctx) {
+      return;
+    }
+
+    let colorLine;
+    const twinkle = options.particles.twinkle.lines;
+    const twinkleFreq = twinkle.frequency;
+    const twinkleColor = twinkle.color;
+    const twinkleRgb = twinkleColor !== undefined ? ColorUtils_ColorUtils.colorToRgb(twinkleColor) : undefined;
+    const twinkling = twinkle.enable && Math.random() < twinkleFreq;
+
+    if (twinkling && twinkleRgb !== undefined) {
+      colorLine = twinkleRgb;
+      opacity = twinkle.opacity;
+    } else if (container.particles.lineLinkedColor === Constants.randomColorValue) {
+      colorLine = ColorUtils_ColorUtils.getRandomRgbColor();
+    } else if (container.particles.lineLinkedColor == "mid" && p1.color && p2.color) {
+      const sourceColor = p1.color;
+      const destColor = p2.color;
+      colorLine = ColorUtils_ColorUtils.mix(sourceColor, destColor, p1.size.value, p2.size.value);
+    } else {
+      colorLine = container.particles.lineLinkedColor;
+    }
+
+    const width = (_a = p1.lineLinkedWidth) !== null && _a !== void 0 ? _a : container.retina.lineLinkedWidth;
+    CanvasUtils_CanvasUtils.drawLineLinked(ctx, width, pos1, pos2, options.backgroundMask.enable, colorLine, opacity, p1.particlesOptions.lineLinked.shadow);
+  }
+
+  drawConnectLine(p1, p2) {
+    var _a;
+
+    const lineStyle = this.lineStyle(p1, p2);
+
+    if (!lineStyle) {
+      return;
+    }
+
+    const ctx = this.context;
+
+    if (!ctx) {
+      return;
+    }
+
+    const pos1 = {
+      x: p1.position.x + p1.offset.x,
+      y: p1.position.y + p1.offset.y
+    };
+    const pos2 = {
+      x: p2.position.x + p2.offset.x,
+      y: p2.position.y + p2.offset.y
+    };
+    CanvasUtils_CanvasUtils.drawConnectLine(ctx, (_a = p1.lineLinkedWidth) !== null && _a !== void 0 ? _a : this.container.retina.lineLinkedWidth, lineStyle, pos1, pos2);
+  }
+
+  drawGrabLine(particle, opacity, mousePos) {
+    var _a;
+
+    const container = this.container;
+    const optColor = particle.particlesOptions.lineLinked.color;
+    let lineColor = container.particles.grabLineColor || (typeof optColor === "string" ? ColorUtils_ColorUtils.stringToRgb(optColor) : ColorUtils_ColorUtils.colorToRgb(optColor));
+
+    if (lineColor == Constants.randomColorValue) {
+      lineColor = ColorUtils_ColorUtils.getRandomRgbColor();
+    }
+
+    container.particles.grabLineColor = lineColor;
+    const ctx = container.canvas.context;
+
+    if (!ctx) {
+      return;
+    }
+
+    let colorLine;
+
+    if (container.particles.grabLineColor === Constants.randomColorValue) {
+      colorLine = ColorUtils_ColorUtils.getRandomRgbColor();
+    } else {
+      colorLine = container.particles.grabLineColor;
+    }
+
+    if (colorLine === undefined) {
+      return;
+    }
+
+    const beginPos = {
+      x: particle.position.x + particle.offset.x,
+      y: particle.position.y + particle.offset.y
+    };
+    CanvasUtils_CanvasUtils.drawGrabLine(ctx, (_a = particle.lineLinkedWidth) !== null && _a !== void 0 ? _a : container.retina.lineLinkedWidth, beginPos, mousePos, colorLine, opacity);
+  }
+
+  drawParticle(particle) {
+    var _a, _b, _c;
+
+    const container = this.container;
+    const options = container.options;
+    const twinkle = particle.particlesOptions.twinkle.particles;
+    const twinkleFreq = twinkle.frequency;
+    const twinkleColor = typeof twinkle.color === "string" ? {
+      value: twinkle.color
+    } : twinkle.color;
+    const twinkleRgb = twinkleColor !== undefined ? ColorUtils_ColorUtils.colorToRgb(twinkleColor) : undefined;
+    const twinkling = twinkle.enable && Math.random() < twinkleFreq;
+    const radius = (_a = particle.bubble.radius) !== null && _a !== void 0 ? _a : particle.size.value;
+    const opacity = twinkling ? twinkle.opacity : (_b = particle.bubble.opacity) !== null && _b !== void 0 ? _b : particle.opacity.value;
+    const color = twinkling && twinkleRgb !== undefined ? twinkleRgb : (_c = particle.bubble.color) !== null && _c !== void 0 ? _c : particle.color;
+    const colorValue = color !== undefined ? ColorUtils_ColorUtils.getStyleFromColor(color, opacity) : undefined;
+
+    if (!this.context || !colorValue) {
+      return;
+    }
+
+    CanvasUtils_CanvasUtils.drawParticle(this.context, particle, colorValue, options.backgroundMask.enable, radius, opacity, particle.particlesOptions.shadow);
+  }
+
+  paintBase(baseColor) {
+    if (this.context) {
+      CanvasUtils_CanvasUtils.paintBase(this.context, this.size, baseColor);
+    }
+  }
+
+  lineStyle(p1, p2) {
+    const container = this.container;
+    const options = container.options;
+    const connectOptions = options.interactivity.modes.connect;
+
+    if (p1.color && p2.color) {
+      if (this.context) {
+        return CanvasUtils_CanvasUtils.gradient(this.context, p1, p2, connectOptions.lineLinked.opacity);
+      }
+    }
+  }
+
+  initBackground() {
+    const container = this.container;
+    const options = container.options;
+    const background = options.background;
+    const element = this.element;
+
+    if (!element) {
+      return;
+    }
+
+    const elementStyle = element.style;
+
+    if (background.color) {
+      const color = ColorUtils_ColorUtils.colorToRgb(background.color);
+
+      if (color) {
+        elementStyle.backgroundColor = ColorUtils_ColorUtils.getStyleFromColor(color, background.opacity);
+      }
+    }
+
+    if (background.image) {
+      elementStyle.backgroundImage = background.image;
+    }
+
+    if (background.position) {
+      elementStyle.backgroundPosition = background.position;
+    }
+
+    if (background.repeat) {
+      elementStyle.backgroundRepeat = background.repeat;
+    }
+
+    if (background.size) {
+      elementStyle.backgroundSize = background.size;
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Enums/Modes/ClickMode.js
+var ClickMode;
+
+(function (ClickMode) {
+  ClickMode["bubble"] = "bubble";
+  ClickMode["push"] = "push";
+  ClickMode["remove"] = "remove";
+  ClickMode["repulse"] = "repulse";
+  ClickMode["emitter"] = "emitter";
+  ClickMode["absorber"] = "absorber";
+})(ClickMode || (ClickMode = {}));
+// CONCATENATED MODULE: ./dist/Enums/InteractivityDetect.js
+var InteractivityDetect;
+
+(function (InteractivityDetect) {
+  InteractivityDetect["canvas"] = "canvas";
+  InteractivityDetect["parent"] = "parent";
+  InteractivityDetect["window"] = "window";
+})(InteractivityDetect || (InteractivityDetect = {}));
+// CONCATENATED MODULE: ./dist/Enums/PolygonMaskType.js
+var PolygonMaskType;
+
+(function (PolygonMaskType) {
+  PolygonMaskType["inline"] = "inline";
+  PolygonMaskType["inside"] = "inside";
+  PolygonMaskType["outside"] = "outside";
+  PolygonMaskType["none"] = "none";
+})(PolygonMaskType || (PolygonMaskType = {}));
+// CONCATENATED MODULE: ./dist/Enums/ShapeType.js
+var ShapeType;
+
+(function (ShapeType) {
+  ShapeType["char"] = "char";
+  ShapeType["character"] = "character";
+  ShapeType["circle"] = "circle";
+  ShapeType["edge"] = "edge";
+  ShapeType["image"] = "image";
+  ShapeType["images"] = "images";
+  ShapeType["line"] = "line";
+  ShapeType["polygon"] = "polygon";
+  ShapeType["square"] = "square";
+  ShapeType["star"] = "star";
+  ShapeType["triangle"] = "triangle";
+})(ShapeType || (ShapeType = {}));
+// CONCATENATED MODULE: ./dist/Enums/OutMode.js
+var OutMode;
+
+(function (OutMode) {
+  OutMode["bounce"] = "bounce";
+  OutMode["bounceHorizontal"] = "bounce-horizontal";
+  OutMode["bounceVertical"] = "bounce-vertical";
+  OutMode["out"] = "out";
+  OutMode["destroy"] = "destroy";
+})(OutMode || (OutMode = {}));
+// CONCATENATED MODULE: ./dist/Enums/Modes/HoverMode.js
+var HoverMode;
+
+(function (HoverMode) {
+  HoverMode["bubble"] = "bubble";
+  HoverMode["connect"] = "connect";
+  HoverMode["grab"] = "grab";
+  HoverMode["repulse"] = "repulse";
+  HoverMode["slow"] = "slow";
+})(HoverMode || (HoverMode = {}));
+// CONCATENATED MODULE: ./dist/Classes/Particle/Mover.js
+
+
+class Mover_Mover {
+  constructor(container, particle) {
+    this.container = container;
+    this.particle = particle;
+  }
+
+  move(delta) {
+    var _a;
+
+    const container = this.container;
+    const options = container.options;
+    const particle = this.particle;
+
+    if (options.particles.move.enable) {
+      const slowFactor = this.getProximitySpeedFactor();
+      const deltaFactor = options.fpsLimit > 0 ? 60 * delta / 1000 : 3.6;
+      const baseSpeed = (_a = particle.moveSpeed) !== null && _a !== void 0 ? _a : container.retina.moveSpeed;
+      const moveSpeed = baseSpeed / 2 * slowFactor * deltaFactor;
+      particle.position.x += particle.velocity.horizontal * moveSpeed;
+      particle.position.y += particle.velocity.vertical * moveSpeed;
+    }
+
+    this.moveParallax();
+  }
+
+  moveParallax() {
+    const container = this.container;
+    const options = container.options;
+
+    if (!options.interactivity.events.onHover.parallax.enable) {
+      return;
+    }
+
+    const particle = this.particle;
+    const parallaxForce = options.interactivity.events.onHover.parallax.force;
+    const mousePos = container.interactivity.mouse.position;
+
+    if (!mousePos) {
+      return;
+    }
+
+    const windowDimension = {
+      height: window.innerHeight / 2,
+      width: window.innerWidth / 2
+    };
+    const parallaxSmooth = options.interactivity.events.onHover.parallax.smooth;
+    const tmp = {
+      x: (mousePos.x - windowDimension.width) * (particle.size.value / parallaxForce),
+      y: (mousePos.y - windowDimension.height) * (particle.size.value / parallaxForce)
+    };
+    particle.offset.x += (tmp.x - particle.offset.x) / parallaxSmooth;
+    particle.offset.y += (tmp.y - particle.offset.y) / parallaxSmooth;
+  }
+
+  getProximitySpeedFactor() {
+    const container = this.container;
+    const options = container.options;
+    const particle = this.particle;
+    const active = Utils_Utils.isInArray(HoverMode.slow, options.interactivity.events.onHover.mode);
+
+    if (!active) {
+      return 1;
+    }
+
+    const mousePos = this.container.interactivity.mouse.position;
+
+    if (!mousePos) {
+      return 1;
+    }
+
+    const particlePos = {
+      x: particle.position.x + particle.offset.x,
+      y: particle.position.y + particle.offset.y
+    };
+    const dist = Utils_Utils.getDistanceBetweenCoordinates(mousePos, particlePos);
+    const radius = container.retina.slowModeRadius;
+
+    if (dist > radius) {
+      return 1;
+    }
+
+    const proximityFactor = dist / radius || 0;
+    const slowFactor = options.interactivity.modes.slow.factor;
+    return proximityFactor / slowFactor;
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Enums/RotateDirection.js
+var RotateDirection;
+
+(function (RotateDirection) {
+  RotateDirection["clockwise"] = "clockwise";
+  RotateDirection["counterClockwise"] = "counter-clockwise";
+  RotateDirection["random"] = "random";
+})(RotateDirection || (RotateDirection = {}));
+// CONCATENATED MODULE: ./dist/Enums/SizeAnimationStatus.js
+var SizeAnimationStatus;
+
+(function (SizeAnimationStatus) {
+  SizeAnimationStatus[SizeAnimationStatus["increasing"] = 0] = "increasing";
+  SizeAnimationStatus[SizeAnimationStatus["decreasing"] = 1] = "decreasing";
+})(SizeAnimationStatus || (SizeAnimationStatus = {}));
+// CONCATENATED MODULE: ./dist/Enums/OpacityAnimationStatus.js
+var OpacityAnimationStatus;
+
+(function (OpacityAnimationStatus) {
+  OpacityAnimationStatus[OpacityAnimationStatus["increasing"] = 0] = "increasing";
+  OpacityAnimationStatus[OpacityAnimationStatus["decreasing"] = 1] = "decreasing";
+})(OpacityAnimationStatus || (OpacityAnimationStatus = {}));
+// CONCATENATED MODULE: ./dist/Classes/Particle/Updater.js
+
+
+
+
+
+
+
+class Updater_Updater {
+  constructor(container, particle) {
+    this.container = container;
+    this.particle = particle;
+    this.mover = new Mover_Mover(container, particle);
+  }
+
+  static checkBounds(coordinate, radius, size, velocity, outside) {
+    if (coordinate + radius > size && velocity > 0 || coordinate - radius < 0 && velocity < 0) {
+      outside();
+    }
+  }
+
+  update(delta) {
+    this.mover.move(delta);
+    this.updateOpacity(delta);
+    this.updateSize(delta);
+    this.updateAngle(delta);
+    this.fixOutOfCanvasPosition();
+    this.updateOutMode();
+  }
+
+  updateOpacity(delta) {
+    const container = this.container;
+    const options = container.options;
+    const particle = this.particle;
+    const deltaFactor = options.fpsLimit > 0 ? 60 * delta / 1000 : 3.6;
+
+    if (particle.particlesOptions.opacity.animation.enable) {
+      switch (particle.opacity.status) {
+        case OpacityAnimationStatus.increasing:
+          if (particle.opacity.value >= particle.particlesOptions.opacity.value) {
+            particle.opacity.status = OpacityAnimationStatus.decreasing;
+          } else {
+            particle.opacity.value += (particle.opacity.velocity || 0) * deltaFactor;
+          }
+
+          break;
+
+        case OpacityAnimationStatus.decreasing:
+          if (particle.opacity.value <= particle.particlesOptions.opacity.animation.minimumValue) {
+            particle.opacity.status = OpacityAnimationStatus.increasing;
+          } else {
+            particle.opacity.value -= (particle.opacity.velocity || 0) * deltaFactor;
+          }
+
+          break;
+      }
+
+      if (particle.opacity.value < 0) {
+        particle.opacity.value = 0;
+      }
+    }
+  }
+
+  updateSize(delta) {
+    var _a;
+
+    const container = this.container;
+    const options = container.options;
+    const particle = this.particle;
+    const deltaFactor = options.fpsLimit > 0 ? 60 * delta / 1000 : 3.6;
+
+    if (particle.particlesOptions.size.animation.enable) {
+      switch (particle.size.status) {
+        case SizeAnimationStatus.increasing:
+          if (particle.size.value >= ((_a = particle.sizeValue) !== null && _a !== void 0 ? _a : container.retina.sizeValue)) {
+            particle.size.status = SizeAnimationStatus.decreasing;
+          } else {
+            particle.size.value += (particle.size.velocity || 0) * deltaFactor;
+          }
+
+          break;
+
+        case SizeAnimationStatus.decreasing:
+          if (particle.size.value <= particle.particlesOptions.size.animation.minimumValue) {
+            particle.size.status = SizeAnimationStatus.increasing;
+          } else {
+            particle.size.value -= (particle.size.velocity || 0) * deltaFactor;
+          }
+
+      }
+
+      if (particle.size.value < 0) {
+        particle.size.value = 0;
+      }
+    }
+  }
+
+  updateAngle(delta) {
+    const container = this.container;
+    const options = container.options;
+    const particle = this.particle;
+    const deltaFactor = options.fpsLimit > 0 ? 60 * delta / 1000 : 3.6;
+
+    if (particle.particlesOptions.rotate.animation.enable) {
+      switch (particle.rotateDirection) {
+        case RotateDirection.clockwise:
+          particle.angle += particle.particlesOptions.rotate.animation.speed * Math.PI / 18 * deltaFactor;
+
+          if (particle.angle > 360) {
+            particle.angle -= 360;
+          }
+
+          break;
+
+        case RotateDirection.counterClockwise:
+        default:
+          particle.angle -= particle.particlesOptions.rotate.animation.speed * Math.PI / 18 * deltaFactor;
+
+          if (particle.angle < 0) {
+            particle.angle += 360;
+          }
+
+          break;
+      }
+    }
+  }
+
+  fixOutOfCanvasPosition() {
+    const container = this.container;
+    const particle = this.particle;
+    const outMode = particle.particlesOptions.move.outMode;
+    const canvasSize = container.canvas.size;
+    let newPos;
+
+    if (outMode === OutMode.bounce) {
+      newPos = {
+        bottom: canvasSize.height,
+        left: particle.size.value,
+        right: canvasSize.width,
+        top: particle.size.value
+      };
+    } else if (outMode === OutMode.bounceHorizontal) {
+      newPos = {
+        bottom: canvasSize.height + particle.size.value - particle.offset.y,
+        left: particle.size.value,
+        right: canvasSize.width,
+        top: -particle.size.value - particle.offset.y
+      };
+    } else if (outMode === OutMode.bounceVertical) {
+      newPos = {
+        bottom: canvasSize.height,
+        left: -particle.size.value - particle.offset.x,
+        right: canvasSize.width + particle.size.value + particle.offset.x,
+        top: particle.size.value
+      };
+    } else {
+      newPos = {
+        bottom: canvasSize.height + particle.size.value - particle.offset.y,
+        left: -particle.size.value - particle.offset.x,
+        right: canvasSize.width + particle.size.value + particle.offset.x,
+        top: -particle.size.value - particle.offset.y
+      };
+    }
+
+    if (outMode === OutMode.destroy) {
+      const sizeValue = particle.size.value;
+
+      if (!Utils_Utils.isPointInside(particle.position, container.canvas.size, sizeValue)) {
+        container.particles.remove(particle);
+      }
+    } else {
+      const sizeValue = particle.size.value;
+      const nextBounds = Utils_Utils.calculateBounds(particle.position, sizeValue);
+
+      if (nextBounds.left > canvasSize.width - particle.offset.x) {
+        particle.position.x = newPos.left;
+        particle.position.y = Math.random() * canvasSize.height;
+      } else if (nextBounds.right < -particle.offset.x) {
+        particle.position.x = newPos.right;
+        particle.position.y = Math.random() * canvasSize.height;
+      }
+
+      if (nextBounds.top > canvasSize.height - particle.offset.y) {
+        particle.position.x = Math.random() * canvasSize.width;
+        particle.position.y = newPos.top;
+      } else if (nextBounds.bottom < -particle.offset.y) {
+        particle.position.x = Math.random() * canvasSize.width;
+        particle.position.y = newPos.bottom;
+      }
+    }
+  }
+
+  updateOutMode() {
+    const particle = this.particle;
+
+    switch (particle.particlesOptions.move.outMode) {
+      case OutMode.bounce:
+      case OutMode.bounceVertical:
+      case OutMode.bounceHorizontal:
+        this.updateBounce();
+        break;
+    }
+  }
+
+  updateBounce() {
+    const container = this.container;
+    const options = container.options;
+    const particle = this.particle;
+
+    if (options.polygon.enable && options.polygon.type !== PolygonMaskType.none && options.polygon.type !== PolygonMaskType.inline) {
+      if (!container.polygon.checkInsidePolygon(particle.position)) {
+        this.polygonBounce();
+      }
+    } else if (options.polygon.enable && options.polygon.type === PolygonMaskType.inline) {
+      if (particle.initialPosition) {
+        const dist = Utils_Utils.getDistanceBetweenCoordinates(particle.initialPosition, particle.position);
+
+        if (dist > container.retina.polygonMaskMoveRadius) {
+          this.polygonBounce();
+        }
+      }
+    } else {
+      const outMode = particle.particlesOptions.move.outMode;
+      const x = particle.position.x + particle.offset.x;
+      const y = particle.position.y + particle.offset.y;
+
+      if (outMode === OutMode.bounce || outMode === OutMode.bounceHorizontal) {
+        const size = particle.size.value;
+        const velocity = particle.velocity.horizontal;
+        Updater_Updater.checkBounds(x, size, container.canvas.size.width, velocity, () => {
+          particle.velocity.horizontal *= -1;
+        });
+      }
+
+      if (outMode === OutMode.bounce || outMode === OutMode.bounceVertical) {
+        const size = particle.size.value;
+        const velocity = particle.velocity.vertical;
+        Updater_Updater.checkBounds(y, size, container.canvas.size.height, velocity, () => {
+          particle.velocity.vertical *= -1;
+        });
+      }
+    }
+  }
+
+  polygonBounce() {
+    const particle = this.particle;
+    particle.velocity.horizontal = -particle.velocity.horizontal + particle.velocity.vertical / 2;
+    particle.velocity.vertical = -particle.velocity.vertical + particle.velocity.horizontal / 2;
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Particles/OptionsColor.js
+class OptionsColor {
+  constructor() {
+    this.value = "#fff";
+  }
+
+  load(data) {
+    if (data !== undefined) {
+      if (data.value !== undefined) {
+        this.value = data.value;
+      }
+    }
+  }
+
+  static create(source, data) {
+    const color = source !== null && source !== void 0 ? source : new OptionsColor();
+
+    if (data !== undefined) {
+      color.load(typeof data === "string" ? {
+        value: data
+      } : data);
+    }
+
+    return color;
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Particles/LineLinked/LineLinkedShadow.js
+
+class LineLinkedShadow_LineLinkedShadow {
+  constructor() {
+    this.blur = 5;
+    this.color = new OptionsColor();
+    this.enable = false;
+    this.color.value = "lime";
+  }
+
+  load(data) {
+    if (data !== undefined) {
+      if (data.blur !== undefined) {
+        this.blur = data.blur;
+      }
+
+      this.color = OptionsColor.create(this.color, data.color);
+
+      if (data.enable !== undefined) {
+        this.enable = data.enable;
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Particles/LineLinked/LineLinked.js
+
+
+class LineLinked_LineLinked {
+  constructor() {
+    this.blink = false;
+    this.color = new OptionsColor();
+    this.consent = false;
+    this.distance = 100;
+    this.enable = false;
+    this.opacity = 1;
+    this.shadow = new LineLinkedShadow_LineLinkedShadow();
+    this.width = 1;
+  }
+
+  load(data) {
+    if (data !== undefined) {
+      if (data.blink !== undefined) {
+        this.blink = data.blink;
+      }
+
+      this.color = OptionsColor.create(this.color, data.color);
+
+      if (data.consent !== undefined) {
+        this.consent = data.consent;
+      }
+
+      if (data.distance !== undefined) {
+        this.distance = data.distance;
+      }
+
+      if (data.enable !== undefined) {
+        this.enable = data.enable;
+      }
+
+      if (data.opacity !== undefined) {
+        this.opacity = data.opacity;
+      }
+
+      this.shadow.load(data.shadow);
+
+      if (data.width !== undefined) {
+        this.width = data.width;
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Particles/Attract.js
+class Attract {
+  constructor() {
+    this.enable = false;
+    this.rotate = {
+      x: 3000,
+      y: 3000
+    };
+  }
+
+  get rotateX() {
+    return this.rotate.x;
+  }
+
+  set rotateX(value) {
+    this.rotate.x = value;
+  }
+
+  get rotateY() {
+    return this.rotate.y;
+  }
+
+  set rotateY(value) {
+    this.rotate.y = value;
+  }
+
+  load(data) {
+    var _a, _b, _c, _d;
+
+    if (data !== undefined) {
+      if (data.enable !== undefined) {
+        this.enable = data.enable;
+      }
+
+      const rotateX = (_b = (_a = data.rotate) === null || _a === void 0 ? void 0 : _a.x) !== null && _b !== void 0 ? _b : data.rotateX;
+
+      if (rotateX !== undefined) {
+        this.rotate.x = rotateX;
+      }
+
+      const rotateY = (_d = (_c = data.rotate) === null || _c === void 0 ? void 0 : _c.y) !== null && _d !== void 0 ? _d : data.rotateY;
+
+      if (rotateY !== undefined) {
+        this.rotate.y = rotateY;
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Particles/Trail.js
+
+class Trail_Trail {
+  constructor() {
+    this.enable = false;
+    this.length = 10;
+    this.fillColor = new OptionsColor();
+    this.fillColor.value = "#000000";
+  }
+
+  load(data) {
+    if (data !== undefined) {
+      if (data.enable !== undefined) {
+        this.enable = data.enable;
+      }
+
+      this.fillColor = OptionsColor.create(this.fillColor, data.fillColor);
+
+      if (data.length !== undefined) {
+        this.length = data.length;
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Particles/Move.js
+
+
+
+
+class Move_Move {
+  constructor() {
+    this.attract = new Attract();
+    this.direction = MoveDirection.none;
+    this.enable = false;
+    this.outMode = OutMode.out;
+    this.random = false;
+    this.speed = 2;
+    this.straight = false;
+    this.trail = new Trail_Trail();
+  }
+
+  get collisions() {
+    return false;
+  }
+
+  set collisions(value) {}
+
+  get bounce() {
+    return this.collisions;
+  }
+
+  set bounce(value) {
+    this.collisions = value;
+  }
+
+  get out_mode() {
+    return this.outMode;
+  }
+
+  set out_mode(value) {
+    this.outMode = value;
+  }
+
+  load(data) {
+    var _a;
+
+    if (data !== undefined) {
+      this.attract.load(data.attract);
+
+      if (data.direction !== undefined) {
+        this.direction = data.direction;
+      }
+
+      if (data.enable !== undefined) {
+        this.enable = data.enable;
+      }
+
+      const outMode = (_a = data.outMode) !== null && _a !== void 0 ? _a : data.out_mode;
+
+      if (outMode !== undefined) {
+        this.outMode = outMode;
+      }
+
+      if (data.random !== undefined) {
+        this.random = data.random;
+      }
+
+      if (data.speed !== undefined) {
+        this.speed = data.speed;
+      }
+
+      if (data.straight !== undefined) {
+        this.straight = data.straight;
+      }
+
+      this.trail.load(data.trail);
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Particles/Density.js
+class Density {
+  constructor() {
+    this.enable = false;
+    this.area = 800;
+  }
+
+  get value_area() {
+    return this.area;
+  }
+
+  set value_area(value) {
+    this.area = value;
+  }
+
+  load(data) {
+    var _a;
+
+    if (data !== undefined) {
+      if (data.enable !== undefined) {
+        this.enable = data.enable;
+      }
+
+      const area = (_a = data.area) !== null && _a !== void 0 ? _a : data.value_area;
+
+      if (area !== undefined) {
+        this.area = area;
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Particles/ParticlesNumber.js
+
+class ParticlesNumber_ParticlesNumber {
+  constructor() {
+    this.density = new Density();
+    this.limit = 0;
+    this.value = 100;
+  }
+
+  get max() {
+    return this.limit;
+  }
+
+  set max(value) {
+    this.limit = value;
+  }
+
+  load(data) {
+    var _a;
+
+    if (data !== undefined) {
+      this.density.load(data.density);
+      const limit = (_a = data.limit) !== null && _a !== void 0 ? _a : data.max;
+
+      if (limit !== undefined) {
+        this.limit = limit;
+      }
+
+      if (data.value !== undefined) {
+        this.value = data.value;
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Particles/Opacity/OpacityAnimation.js
+class OpacityAnimation {
+  constructor() {
+    this.enable = false;
+    this.minimumValue = 0;
+    this.speed = 2;
+    this.sync = false;
+  }
+
+  get opacity_min() {
+    return this.minimumValue;
+  }
+
+  set opacity_min(value) {
+    this.minimumValue = value;
+  }
+
+  load(data) {
+    var _a;
+
+    if (data !== undefined) {
+      if (data.enable !== undefined) {
+        this.enable = data.enable;
+      }
+
+      const minimumValue = (_a = data.minimumValue) !== null && _a !== void 0 ? _a : data.opacity_min;
+
+      if (minimumValue !== undefined) {
+        this.minimumValue = minimumValue;
+      }
+
+      if (data.speed !== undefined) {
+        this.speed = data.speed;
+      }
+
+      if (data.sync !== undefined) {
+        this.sync = data.sync;
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Particles/Opacity/OpacityRandom.js
+class OpacityRandom {
+  constructor() {
+    this.enable = false;
+    this.minimumValue = 1;
+  }
+
+  load(data) {
+    if (data !== undefined) {
+      if (data.enable !== undefined) {
+        this.enable = data.enable;
+      }
+
+      if (data.minimumValue !== undefined) {
+        this.minimumValue = data.minimumValue;
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Particles/Opacity/Opacity.js
+
+
+class Opacity_Opacity {
+  constructor() {
+    this.animation = new OpacityAnimation();
+    this.random = new OpacityRandom();
+    this.value = 1;
+  }
+
+  get anim() {
+    return this.animation;
+  }
+
+  set anim(value) {
+    this.animation = value;
+  }
+
+  load(data) {
+    var _a;
+
+    if (data !== undefined) {
+      this.animation.load((_a = data.animation) !== null && _a !== void 0 ? _a : data.anim);
+
+      if (data.random !== undefined) {
+        if (typeof data.random === "boolean") {
+          this.random.enable = data.random;
+        } else {
+          this.random.load(data.random);
+        }
+      }
+
+      if (data.value !== undefined) {
+        this.value = data.value;
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Particles/Shape/ShapeBase.js
+class ShapeBase {
+  constructor() {
+    this.fill = true;
+    this.close = true;
+  }
+
+  load(data) {
+    if (data !== undefined) {
+      if (data.fill !== undefined) {
+        this.fill = data.fill;
+      }
+
+      if (data.particles !== undefined) {
+        this.particles = data.particles;
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Particles/Shape/ImageShape.js
+
+class ImageShape_ImageShape extends ShapeBase {
+  constructor() {
+    super();
+    this.height = 100;
+    this.replaceColor = true;
+    this.src = "";
+    this.width = 100;
+  }
+
+  get replace_color() {
+    return this.replaceColor;
+  }
+
+  set replace_color(value) {
+    this.replaceColor = value;
+  }
+
+  load(data) {
+    var _a;
+
+    super.load(data);
+
+    if (data !== undefined) {
+      if (data.height !== undefined) {
+        this.height = data.height;
+      }
+
+      const replaceColor = (_a = data.replaceColor) !== null && _a !== void 0 ? _a : data.replace_color;
+
+      if (replaceColor !== undefined) {
+        this.replaceColor = replaceColor;
+      }
+
+      if (data.src !== undefined) {
+        this.src = data.src;
+      }
+
+      if (data.width !== undefined) {
+        this.width = data.width;
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Particles/Shape/PolygonShape.js
+
+class PolygonShape_PolygonShape extends ShapeBase {
+  constructor() {
+    super();
+    this.sides = 5;
+  }
+
+  get nb_sides() {
+    return this.sides;
+  }
+
+  set nb_sides(value) {
+    this.sides = value;
+  }
+
+  load(data) {
+    var _a;
+
+    super.load(data);
+
+    if (data !== undefined) {
+      const sides = (_a = data.sides) !== null && _a !== void 0 ? _a : data.nb_sides;
+
+      if (sides !== undefined) {
+        this.sides = sides;
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Particles/Shape/CharacterShape.js
+
+class CharacterShape_CharacterShape extends ShapeBase {
+  constructor() {
+    super();
+    this.font = "Verdana";
+    this.style = "";
+    this.value = "*";
+    this.weight = "400";
+  }
+
+  load(data) {
+    super.load(data);
+
+    if (data !== undefined) {
+      if (data.font !== undefined) {
+        this.font = data.font;
+      }
+
+      if (data.style !== undefined) {
+        this.style = data.style;
+      }
+
+      if (data.value !== undefined) {
+        this.value = data.value;
+      }
+
+      if (data.weight !== undefined) {
+        this.weight = data.weight;
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Particles/Shape/Shape.js
+
+
+
+
+
+class Shape_Shape {
+  constructor() {
+    this.options = {};
+    this.character = new CharacterShape_CharacterShape();
+    this.image = new ImageShape_ImageShape();
+    this.polygon = new PolygonShape_PolygonShape();
+    this.type = ShapeType.circle;
+  }
+
+  get custom() {
+    return this.options;
+  }
+
+  set custom(value) {
+    this.options = value;
+  }
+
+  get images() {
+    return this.image instanceof Array ? this.image : [this.image];
+  }
+
+  set images(value) {
+    this.image = value;
+  }
+
+  get stroke() {
+    return [];
+  }
+
+  set stroke(_value) {}
+
+  get character() {
+    var _a;
+
+    return (_a = this.options[ShapeType.character]) !== null && _a !== void 0 ? _a : this.options[ShapeType.char];
+  }
+
+  set character(value) {
+    this.options[ShapeType.character] = value;
+    this.options[ShapeType.char] = value;
+  }
+
+  get polygon() {
+    var _a;
+
+    return (_a = this.options[ShapeType.polygon]) !== null && _a !== void 0 ? _a : this.options[ShapeType.star];
+  }
+
+  set polygon(value) {
+    this.options[ShapeType.polygon] = value;
+    this.options[ShapeType.star] = value;
+  }
+
+  load(data) {
+    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+
+    if (data !== undefined) {
+      const options = (_a = data.options) !== null && _a !== void 0 ? _a : data.custom;
+
+      if (options !== undefined) {
+        for (const shape in options) {
+          const item = options[shape];
+
+          if (item !== undefined) {
+            this.options[shape] = Utils_Utils.deepExtend((_b = this.options[shape]) !== null && _b !== void 0 ? _b : {}, item);
+          }
+        }
+      }
+
+      if (data.character !== undefined) {
+        const item = data.character;
+
+        if (item !== undefined) {
+          if (item instanceof Array) {
+            if (this.options[ShapeType.character] instanceof Array) {
+              this.options[ShapeType.character] = Utils_Utils.deepExtend((_c = this.options[ShapeType.character]) !== null && _c !== void 0 ? _c : [], item);
+              this.options[ShapeType.char] = Utils_Utils.deepExtend((_d = this.options[ShapeType.char]) !== null && _d !== void 0 ? _d : [], item);
+            } else {
+              this.options[ShapeType.character] = Utils_Utils.deepExtend([], item);
+              this.options[ShapeType.char] = Utils_Utils.deepExtend([], item);
+            }
+          } else {
+            if (this.options[ShapeType.character] instanceof Array) {
+              this.options[ShapeType.character] = Utils_Utils.deepExtend({}, item);
+              this.options[ShapeType.char] = Utils_Utils.deepExtend({}, item);
+            } else {
+              this.options[ShapeType.character] = Utils_Utils.deepExtend((_e = this.options[ShapeType.character]) !== null && _e !== void 0 ? _e : [], item);
+              this.options[ShapeType.char] = Utils_Utils.deepExtend((_f = this.options[ShapeType.char]) !== null && _f !== void 0 ? _f : [], item);
+            }
+          }
+        }
+      }
+
+      if (data.polygon !== undefined) {
+        const item = data.polygon;
+
+        if (item !== undefined) {
+          if (item instanceof Array) {
+            if (this.options[ShapeType.polygon] instanceof Array) {
+              this.options[ShapeType.polygon] = Utils_Utils.deepExtend((_g = this.options[ShapeType.polygon]) !== null && _g !== void 0 ? _g : [], item);
+              this.options[ShapeType.star] = Utils_Utils.deepExtend((_h = this.options[ShapeType.star]) !== null && _h !== void 0 ? _h : [], item);
+            } else {
+              this.options[ShapeType.polygon] = Utils_Utils.deepExtend([], item);
+              this.options[ShapeType.star] = Utils_Utils.deepExtend([], item);
+            }
+          } else {
+            if (this.options[ShapeType.polygon] instanceof Array) {
+              this.options[ShapeType.polygon] = Utils_Utils.deepExtend({}, item);
+              this.options[ShapeType.star] = Utils_Utils.deepExtend({}, item);
+            } else {
+              this.options[ShapeType.polygon] = Utils_Utils.deepExtend((_j = this.options[ShapeType.polygon]) !== null && _j !== void 0 ? _j : [], item);
+              this.options[ShapeType.star] = Utils_Utils.deepExtend((_k = this.options[ShapeType.star]) !== null && _k !== void 0 ? _k : [], item);
+            }
+          }
+        }
+      }
+
+      if (data.image !== undefined) {
+        if (data.image instanceof Array) {
+          this.image = data.image.map(s => {
+            const tmp = new ImageShape_ImageShape();
+            tmp.load(s);
+            return tmp;
+          });
+        } else {
+          if (this.image instanceof Array) {
+            this.image = new ImageShape_ImageShape();
+          }
+
+          this.image.load(data.image);
+        }
+      }
+
+      if (data.type !== undefined) {
+        this.type = data.type;
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Particles/Size/SizeAnimation.js
+class SizeAnimation {
+  constructor() {
+    this.enable = false;
+    this.minimumValue = 0;
+    this.speed = 5;
+    this.sync = false;
+  }
+
+  get size_min() {
+    return this.minimumValue;
+  }
+
+  set size_min(value) {
+    this.minimumValue = value;
+  }
+
+  load(data) {
+    var _a;
+
+    if (data !== undefined) {
+      if (data.enable !== undefined) {
+        this.enable = data.enable;
+      }
+
+      const minimumValue = (_a = data.minimumValue) !== null && _a !== void 0 ? _a : data.size_min;
+
+      if (minimumValue !== undefined) {
+        this.minimumValue = minimumValue;
+      }
+
+      if (data.speed !== undefined) {
+        this.speed = data.speed;
+      }
+
+      if (data.sync !== undefined) {
+        this.sync = data.sync;
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Particles/Size/SizeRandom.js
+class SizeRandom {
+  constructor() {
+    this.enable = false;
+    this.minimumValue = 1;
+  }
+
+  load(data) {
+    if (data !== undefined) {
+      if (data.enable !== undefined) {
+        this.enable = data.enable;
+      }
+
+      if (data.minimumValue !== undefined) {
+        this.minimumValue = data.minimumValue;
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Particles/Size/Size.js
+
+
+class Size_Size {
+  constructor() {
+    this.animation = new SizeAnimation();
+    this.random = new SizeRandom();
+    this.value = 3;
+  }
+
+  get anim() {
+    return this.animation;
+  }
+
+  set anim(value) {
+    this.animation = value;
+  }
+
+  load(data) {
+    var _a;
+
+    if (data !== undefined) {
+      const animation = (_a = data.animation) !== null && _a !== void 0 ? _a : data.anim;
+
+      if (animation !== undefined) {
+        this.animation.load(animation);
+      }
+
+      if (data.random !== undefined) {
+        if (typeof data.random === "boolean") {
+          this.random.enable = data.random;
+        } else {
+          this.random.load(data.random);
+        }
+      }
+
+      if (data.value !== undefined) {
+        this.value = data.value;
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Particles/Rotate/RotateAnimation.js
+class RotateAnimation {
+  constructor() {
+    this.enable = false;
+    this.speed = 0;
+    this.sync = false;
+  }
+
+  load(data) {
+    if (data !== undefined) {
+      if (data.enable !== undefined) {
+        this.enable = data.enable;
+      }
+
+      if (data.speed !== undefined) {
+        this.speed = data.speed;
+      }
+
+      if (data.sync !== undefined) {
+        this.sync = data.sync;
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Particles/Rotate/Rotate.js
+
+
+class Rotate_Rotate {
+  constructor() {
+    this.animation = new RotateAnimation();
+    this.direction = RotateDirection.clockwise;
+    this.random = false;
+    this.value = 0;
+  }
+
+  load(data) {
+    if (data !== undefined) {
+      this.animation.load(data.animation);
+
+      if (data.random !== undefined) {
+        this.random = data.random;
+      }
+
+      if (data.direction !== undefined) {
+        this.direction = data.direction;
+      }
+
+      if (data.value !== undefined) {
+        this.value = data.value;
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Particles/Shadow.js
+
+class Shadow_Shadow {
+  constructor() {
+    this.blur = 0;
+    this.color = new OptionsColor();
+    this.enable = false;
+    this.offset = {
+      x: 0,
+      y: 0
+    };
+    this.color.value = "#000000";
+  }
+
+  load(data) {
+    if (data !== undefined) {
+      if (data.blur !== undefined) {
+        this.blur = data.blur;
+      }
+
+      this.color = OptionsColor.create(this.color, data.color);
+
+      if (data.enable !== undefined) {
+        this.enable = data.enable;
+      }
+
+      if (data.offset !== undefined) {
+        if (data.offset.x !== undefined) {
+          this.offset.x = data.offset.x;
+        }
+
+        if (data.offset.y !== undefined) {
+          this.offset.y = data.offset.y;
+        }
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Particles/Stroke.js
+
+class Stroke_Stroke {
+  constructor() {
+    this.color = new OptionsColor();
+    this.width = 0;
+    this.opacity = 1;
+    this.color.value = "#ff0000";
+  }
+
+  load(data) {
+    if (data !== undefined) {
+      this.color = OptionsColor.create(this.color, data.color);
+
+      if (data.width !== undefined) {
+        this.width = data.width;
+      }
+
+      if (data.opacity !== undefined) {
+        this.opacity = data.opacity;
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Enums/CollisionMode.js
+var CollisionMode;
+
+(function (CollisionMode) {
+  CollisionMode["bounce"] = "bounce";
+})(CollisionMode || (CollisionMode = {}));
+// CONCATENATED MODULE: ./dist/Classes/Options/Particles/Collisions.js
+
+class Collisions_Collisions {
+  constructor() {
+    this.enable = false;
+    this.mode = CollisionMode.bounce;
+  }
+
+  load(data) {
+    if (data !== undefined) {
+      if (data.enable !== undefined) {
+        this.enable = data.enable;
+      }
+
+      if (data.mode !== undefined) {
+        this.mode = data.mode;
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Particles/Twinkle/TwinkleValues.js
+
+class TwinkleValues_TwinkleValues {
+  constructor() {
+    this.enable = false;
+    this.frequency = 0.05;
+    this.opacity = 1;
+  }
+
+  load(data) {
+    if (data !== undefined) {
+      if (data.color !== undefined) {
+        this.color = OptionsColor.create(this.color, data.color);
+      }
+
+      if (data.enable !== undefined) {
+        this.enable = data.enable;
+      }
+
+      if (data.frequency !== undefined) {
+        this.frequency = data.frequency;
+      }
+
+      if (data.opacity !== undefined) {
+        this.opacity = data.opacity;
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Particles/Twinkle/Twinkle.js
+
+class Twinkle_Twinkle {
+  constructor() {
+    this.lines = new TwinkleValues_TwinkleValues();
+    this.particles = new TwinkleValues_TwinkleValues();
+  }
+
+  load(data) {
+    if (data !== undefined) {
+      this.lines.load(data.lines);
+      this.particles.load(data.particles);
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Particles/Particles.js
+
+
+
+
+
+
+
+
+
+
+
+
+class Particles_Particles {
+  constructor() {
+    this.collisions = new Collisions_Collisions();
+    this.color = new OptionsColor();
+    this.lineLinked = new LineLinked_LineLinked();
+    this.move = new Move_Move();
+    this.number = new ParticlesNumber_ParticlesNumber();
+    this.opacity = new Opacity_Opacity();
+    this.rotate = new Rotate_Rotate();
+    this.shadow = new Shadow_Shadow();
+    this.shape = new Shape_Shape();
+    this.size = new Size_Size();
+    this.stroke = new Stroke_Stroke();
+    this.twinkle = new Twinkle_Twinkle();
+  }
+
+  get line_linked() {
+    return this.lineLinked;
+  }
+
+  set line_linked(value) {
+    this.lineLinked = value;
+  }
+
+  load(data) {
+    var _a, _b, _c, _d, _e, _f;
+
+    if (data !== undefined) {
+      if (data.color !== undefined) {
+        if (data.color instanceof Array) {
+          this.color = data.color.map(s => OptionsColor.create(undefined, s));
+        } else {
+          if (this.color instanceof Array) {
+            this.color = new OptionsColor();
+          }
+
+          this.color = OptionsColor.create(this.color, data.color);
+        }
+      }
+
+      const lineLinked = (_a = data.lineLinked) !== null && _a !== void 0 ? _a : data.line_linked;
+
+      if (lineLinked !== undefined) {
+        this.lineLinked.load(lineLinked);
+      }
+
+      this.move.load(data.move);
+      this.number.load(data.number);
+      this.opacity.load(data.opacity);
+      this.rotate.load(data.rotate);
+      this.shape.load(data.shape);
+      this.size.load(data.size);
+      this.shadow.load(data.shadow);
+      this.twinkle.load(data.twinkle);
+      const collisions = (_c = (_b = data.move) === null || _b === void 0 ? void 0 : _b.collisions) !== null && _c !== void 0 ? _c : (_d = data.move) === null || _d === void 0 ? void 0 : _d.bounce;
+
+      if (collisions !== undefined) {
+        this.collisions.enable = collisions;
+      }
+
+      this.collisions.load(data.collisions);
+      const strokeToLoad = (_e = data.stroke) !== null && _e !== void 0 ? _e : (_f = data.shape) === null || _f === void 0 ? void 0 : _f.stroke;
+
+      if (strokeToLoad !== undefined) {
+        if (strokeToLoad instanceof Array) {
+          this.stroke = strokeToLoad.map(s => {
+            const tmp = new Stroke_Stroke();
+            tmp.load(s);
+            return tmp;
+          });
+        } else {
+          if (this.stroke instanceof Array) {
+            this.stroke = new Stroke_Stroke();
+          }
+
+          this.stroke.load(strokeToLoad);
+        }
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Particle.js
+
+
+
+
+
+
+
+
+
+
+class Particle_Particle {
+  constructor(container, position, emitter) {
+    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
+
+    this.container = container;
+    this.emitter = emitter;
+    this.fill = true;
+    this.close = true;
+    this.links = [];
+    const options = container.options;
+    const particlesOptions = new Particles_Particles();
+    particlesOptions.load(options.particles);
+
+    if (((_b = (_a = emitter === null || emitter === void 0 ? void 0 : emitter.emitterOptions) === null || _a === void 0 ? void 0 : _a.particles) === null || _b === void 0 ? void 0 : _b.shape) !== undefined) {
+      const shapeType = emitter.emitterOptions.particles.shape.type;
+      this.shape = shapeType instanceof Array ? Utils_Utils.itemFromArray(shapeType) : shapeType;
+      const shapeOptions = new Shape_Shape();
+      shapeOptions.load(emitter.emitterOptions.particles.shape);
+
+      if (this.shape !== undefined) {
+        const shapeData = shapeOptions.options[this.shape];
+
+        if (shapeData !== undefined) {
+          this.shapeData = Utils_Utils.deepExtend({}, shapeData instanceof Array ? Utils_Utils.itemFromArray(shapeData) : shapeData);
+          this.fill = (_d = (_c = this.shapeData) === null || _c === void 0 ? void 0 : _c.fill) !== null && _d !== void 0 ? _d : this.fill;
+          this.close = (_f = (_e = this.shapeData) === null || _e === void 0 ? void 0 : _e.close) !== null && _f !== void 0 ? _f : this.close;
+        }
+      }
+    } else {
+      const shapeType = particlesOptions.shape.type;
+      this.shape = shapeType instanceof Array ? Utils_Utils.itemFromArray(shapeType) : shapeType;
+      const shapeData = particlesOptions.shape.options[this.shape];
+
+      if (shapeData) {
+        this.shapeData = Utils_Utils.deepExtend({}, shapeData instanceof Array ? Utils_Utils.itemFromArray(shapeData) : shapeData);
+        this.fill = (_h = (_g = this.shapeData) === null || _g === void 0 ? void 0 : _g.fill) !== null && _h !== void 0 ? _h : this.fill;
+        this.close = (_k = (_j = this.shapeData) === null || _j === void 0 ? void 0 : _j.close) !== null && _k !== void 0 ? _k : this.close;
+      }
+    }
+
+    if (((_l = emitter === null || emitter === void 0 ? void 0 : emitter.emitterOptions) === null || _l === void 0 ? void 0 : _l.particles) !== undefined) {
+      particlesOptions.load(emitter.emitterOptions.particles);
+    }
+
+    particlesOptions.load((_m = this.shapeData) === null || _m === void 0 ? void 0 : _m.particles);
+    this.particlesOptions = particlesOptions;
+    container.retina.initParticle(this);
+    const color = this.particlesOptions.color;
+    const sizeValue = (_o = this.sizeValue) !== null && _o !== void 0 ? _o : container.retina.sizeValue;
+    const randomSize = typeof this.particlesOptions.size.random === "boolean" ? this.particlesOptions.size.random : this.particlesOptions.size.random.enable;
+    this.size = {
+      value: randomSize && this.randomMinimumSize !== undefined ? Utils_Utils.randomInRange(this.randomMinimumSize, sizeValue) * this.container.retina.pixelRatio : sizeValue
+    };
+    this.direction = emitter ? emitter.emitterOptions.direction : this.particlesOptions.move.direction;
+    this.bubble = {};
+    this.angle = this.particlesOptions.rotate.random ? Math.random() * 360 : this.particlesOptions.rotate.value;
+
+    if (this.particlesOptions.rotate.direction == RotateDirection.random) {
+      const index = Math.floor(Math.random() * 2);
+
+      if (index > 0) {
+        this.rotateDirection = RotateDirection.counterClockwise;
+      } else {
+        this.rotateDirection = RotateDirection.clockwise;
+      }
+    } else {
+      this.rotateDirection = this.particlesOptions.rotate.direction;
+    }
+
+    if (this.particlesOptions.size.animation.enable) {
+      this.size.status = SizeAnimationStatus.increasing;
+      this.size.velocity = ((_p = this.sizeAnimationSpeed) !== null && _p !== void 0 ? _p : container.retina.sizeAnimationSpeed) / 100;
+
+      if (!this.particlesOptions.size.animation.sync) {
+        this.size.velocity = this.size.velocity * Math.random();
+      }
+    }
+
+    if (this.particlesOptions.rotate.animation.enable) {
+      if (!this.particlesOptions.rotate.animation.sync) {
+        this.angle = Math.random() * 360;
+      }
+    }
+
+    this.position = this.calcPosition(this.container, position);
+
+    if (options.polygon.enable && options.polygon.type === PolygonMaskType.inline) {
+      this.initialPosition = {
+        x: this.position.x,
+        y: this.position.y
+      };
+    }
+
+    this.offset = {
+      x: 0,
+      y: 0
+    };
+
+    if (this.particlesOptions.collisions.enable) {
+      this.checkOverlap(position);
+    }
+
+    if (color instanceof Array) {
+      this.color = ColorUtils_ColorUtils.colorToRgb(Utils_Utils.itemFromArray(color));
+    } else {
+      this.color = ColorUtils_ColorUtils.colorToRgb(color);
+    }
+
+    const randomOpacity = this.particlesOptions.opacity.random;
+    const opacityValue = this.particlesOptions.opacity.value;
+    this.opacity = {
+      value: randomOpacity.enable ? Utils_Utils.randomInRange(randomOpacity.minimumValue, opacityValue) : opacityValue
+    };
+
+    if (this.particlesOptions.opacity.animation.enable) {
+      this.opacity.status = OpacityAnimationStatus.increasing;
+      this.opacity.velocity = this.particlesOptions.opacity.animation.speed / 100;
+
+      if (!this.particlesOptions.opacity.animation.sync) {
+        this.opacity.velocity *= Math.random();
+      }
+    }
+
+    this.initialVelocity = this.calculateVelocity();
+    this.velocity = {
+      horizontal: this.initialVelocity.horizontal,
+      vertical: this.initialVelocity.vertical
+    };
+
+    if (this.shape === ShapeType.image || this.shape === ShapeType.images) {
+      const shape = this.particlesOptions.shape;
+      const index = Utils_Utils.arrayRandomIndex(container.images);
+      const image = container.images[index];
+      const optionsImage = shape.image instanceof Array ? shape.image[index] : shape.image;
+      this.image = {
+        data: image,
+        ratio: optionsImage.width / optionsImage.height,
+        replaceColor: optionsImage.replaceColor,
+        src: optionsImage.src
+      };
+
+      if (!this.image.ratio) {
+        this.image.ratio = 1;
+      }
+
+      this.fill = (_q = optionsImage.fill) !== null && _q !== void 0 ? _q : this.fill;
+      this.close = (_r = optionsImage.close) !== null && _r !== void 0 ? _r : this.close;
+    }
+
+    this.stroke = this.particlesOptions.stroke instanceof Array ? Utils_Utils.itemFromArray(this.particlesOptions.stroke) : this.particlesOptions.stroke;
+    this.strokeColor = typeof this.stroke.color === "string" ? ColorUtils_ColorUtils.stringToRgb(this.stroke.color) : ColorUtils_ColorUtils.colorToRgb(this.stroke.color);
+    this.shadowColor = typeof this.particlesOptions.shadow.color === "string" ? ColorUtils_ColorUtils.stringToRgb(this.particlesOptions.shadow.color) : ColorUtils_ColorUtils.colorToRgb(this.particlesOptions.shadow.color);
+    this.updater = new Updater_Updater(this.container, this);
+  }
+
+  update(index, delta) {
+    this.links = [];
+    this.updater.update(delta);
+  }
+
+  draw() {
+    this.container.canvas.drawParticle(this);
+  }
+
+  isOverlapping() {
+    const container = this.container;
+    const p = this;
+    let collisionFound = false;
+    let iterations = 0;
+
+    for (const p2 of container.particles.array.filter(t => t != p)) {
+      iterations++;
+      const pos1 = {
+        x: p.position.x + p.offset.x,
+        y: p.position.y + p.offset.y
+      };
+      const pos2 = {
+        x: p2.position.x + p2.offset.x,
+        y: p2.position.y + p2.offset.y
+      };
+      const dist = Utils_Utils.getDistanceBetweenCoordinates(pos1, pos2);
+
+      if (dist <= p.size.value + p2.size.value) {
+        collisionFound = true;
+        break;
+      }
+    }
+
+    return {
+      collisionFound: collisionFound,
+      iterations: iterations
+    };
+  }
+
+  checkOverlap(position) {
+    const container = this.container;
+    const p = this;
+    const overlapResult = p.isOverlapping();
+
+    if (overlapResult.iterations >= container.particles.count) {
+      container.particles.remove(this);
+    } else if (overlapResult.collisionFound) {
+      p.position.x = position ? position.x : Math.random() * container.canvas.size.width;
+      p.position.y = position ? position.y : Math.random() * container.canvas.size.height;
+      p.checkOverlap();
+    }
+  }
+
+  destroy() {}
+
+  calcPosition(container, position) {
+    var _a, _b;
+
+    const pos = {
+      x: 0,
+      y: 0
+    };
+    const options = container.options;
+
+    if (options.polygon.enable && ((_b = (_a = container.polygon.raw) === null || _a === void 0 ? void 0 : _a.length) !== null && _b !== void 0 ? _b : 0) > 0) {
+      if (position) {
+        pos.x = position.x;
+        pos.y = position.y;
+      } else {
+        const randomPoint = container.polygon.randomPointInPolygon();
+        pos.x = randomPoint.x;
+        pos.y = randomPoint.y;
+      }
+    } else {
+      pos.x = position ? position.x : Math.random() * container.canvas.size.width;
+      pos.y = position ? position.y : Math.random() * container.canvas.size.height;
+
+      if (pos.x > container.canvas.size.width - this.size.value * 2) {
+        pos.x -= this.size.value;
+      } else if (pos.x < this.size.value * 2) {
+        pos.x += this.size.value;
+      }
+
+      if (pos.y > container.canvas.size.height - this.size.value * 2) {
+        pos.y -= this.size.value;
+      } else if (pos.y < this.size.value * 2) {
+        pos.y += this.size.value;
+      }
+    }
+
+    return pos;
+  }
+
+  calculateVelocity() {
+    const baseVelocity = Utils_Utils.getParticleBaseVelocity(this);
+    const res = {
+      horizontal: 0,
+      vertical: 0
+    };
+
+    if (this.particlesOptions.move.straight) {
+      res.horizontal = baseVelocity.x;
+      res.vertical = baseVelocity.y;
+
+      if (this.particlesOptions.move.random) {
+        res.horizontal *= Math.random();
+        res.vertical *= Math.random();
+      }
+    } else {
+      res.horizontal = baseVelocity.x + Math.random() - 0.5;
+      res.vertical = baseVelocity.y + Math.random() - 0.5;
+    }
+
+    return res;
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Emitter.js
+
+
+class Emitter_Emitter {
+  constructor(container, emitterOptions, position) {
+    var _a, _b, _c;
+
+    this.container = container;
+    this.initialPosition = position;
+    this.emitterOptions = Utils_Utils.deepExtend({}, emitterOptions);
+    this.position = (_a = this.initialPosition) !== null && _a !== void 0 ? _a : this.calcPosition();
+    this.size = (_b = this.emitterOptions.size) !== null && _b !== void 0 ? _b : {
+      height: 0,
+      width: 0
+    };
+    this.lifeCount = (_c = this.emitterOptions.life.count) !== null && _c !== void 0 ? _c : -1;
+    this.start();
+  }
+
+  emit() {
+    const container = this.container;
+    const position = this.position;
+    const offset = {
+      x: container.canvas.size.width * this.size.width / 100,
+      y: container.canvas.size.height * this.size.height / 100
+    };
+
+    for (let i = 0; i < this.emitterOptions.rate.quantity; i++) {
+      const particle = new Particle_Particle(container, {
+        x: position.x + offset.x * (Math.random() - 0.5),
+        y: position.y + offset.y * (Math.random() - 0.5)
+      }, this);
+      container.particles.addParticle(particle);
+    }
+  }
+
+  start() {
+    if (this.lifeCount > 0 || !this.emitterOptions.life.count) {
+      if (this.startInterval === undefined) {
+        this.startInterval = window.setInterval(() => {
+          this.emit();
+        }, 1000 * this.emitterOptions.rate.delay);
+      }
+
+      if (this.lifeCount > 0) {
+        this.prepareToDie();
+      }
+    }
+  }
+
+  stop() {
+    const interval = this.startInterval;
+
+    if (interval !== undefined) {
+      clearInterval(interval);
+      delete this.startInterval;
+    }
+  }
+
+  resize() {
+    const initialPosition = this.initialPosition;
+    this.position = initialPosition && Utils_Utils.isPointInside(initialPosition, this.container.canvas.size) ? initialPosition : this.calcPosition();
+  }
+
+  prepareToDie() {
+    var _a;
+
+    if (this.lifeCount > 0 && ((_a = this.emitterOptions.life) === null || _a === void 0 ? void 0 : _a.duration) !== undefined) {
+      window.setTimeout(() => {
+        var _a;
+
+        this.stop();
+        this.lifeCount--;
+
+        if (this.lifeCount > 0) {
+          this.position = this.calcPosition();
+          window.setTimeout(() => {
+            this.start();
+          }, (_a = this.emitterOptions.life.delay) !== null && _a !== void 0 ? _a : 0);
+        } else {
+          this.destroy();
+        }
+      }, this.emitterOptions.life.duration * 1000);
+    }
+  }
+
+  destroy() {
+    const container = this.container;
+    const index = container.emitters.indexOf(this);
+
+    if (index >= 0) {
+      container.emitters.splice(index, 1);
+    }
+  }
+
+  calcPosition() {
+    var _a;
+
+    const container = this.container;
+    const percentPosition = (_a = this.emitterOptions.position) !== null && _a !== void 0 ? _a : {
+      x: Math.random() * 100,
+      y: Math.random() * 100
+    };
+    return {
+      x: percentPosition.x / 100 * container.canvas.size.width,
+      y: percentPosition.y / 100 * container.canvas.size.height
+    };
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Absorber.js
+
+
+class Absorber_Absorber {
+  constructor(container, options, position) {
+    var _a, _b;
+
+    this.container = container;
+    this.initialPosition = position;
+    this.options = options;
+    let size = options.size.value * container.retina.pixelRatio;
+    const random = typeof options.size.random === "boolean" ? options.size.random : options.size.random.enable;
+    const minSize = typeof options.size.random === "boolean" ? 1 : options.size.random.minimumValue;
+
+    if (random) {
+      size = Utils_Utils.randomInRange(minSize, size);
+    }
+
+    this.opacity = this.options.opacity;
+    this.size = size * container.retina.pixelRatio;
+    this.mass = size * options.size.density;
+    this.limit = options.size.limit;
+    const color = typeof options.color === "string" ? {
+      value: options.color
+    } : options.color;
+    this.color = (_a = ColorUtils_ColorUtils.colorToRgb(color)) !== null && _a !== void 0 ? _a : {
+      b: 0,
+      g: 0,
+      r: 0
+    };
+    this.position = (_b = this.initialPosition) !== null && _b !== void 0 ? _b : this.calcPosition();
+  }
+
+  attract(particle) {
+    const container = this.container;
+    const dx = this.position.x - (particle.position.x + particle.offset.x);
+    const dy = this.position.y - (particle.position.y + particle.offset.y);
+    const distance = Math.sqrt(Math.abs(dx * dx + dy * dy));
+    const angle = Math.atan2(dx, dy) * (180 / Math.PI);
+    const acceleration = this.mass / Math.pow(distance, 2);
+
+    if (distance < this.size + particle.size.value) {
+      let remove = false;
+      const sizeFactor = particle.size.value * 0.033;
+
+      if (this.size > particle.size.value && distance < this.size - particle.size.value) {
+        container.particles.remove(particle);
+        remove = true;
+      } else {
+        particle.size.value -= sizeFactor;
+        particle.velocity.horizontal += Math.sin(angle * (Math.PI / 180)) * acceleration;
+        particle.velocity.vertical += Math.cos(angle * (Math.PI / 180)) * acceleration;
+      }
+
+      if (this.limit === undefined || this.size < this.limit) {
+        this.size += sizeFactor;
+      }
+
+      this.mass += sizeFactor * this.options.size.density;
+      return !remove;
+    } else {
+      particle.velocity.horizontal += Math.sin(angle * (Math.PI / 180)) * acceleration;
+      particle.velocity.vertical += Math.cos(angle * (Math.PI / 180)) * acceleration;
+      return true;
+    }
+  }
+
+  resize() {
+    const initialPosition = this.initialPosition;
+    this.position = initialPosition && Utils_Utils.isPointInside(initialPosition, this.container.canvas.size) ? initialPosition : this.calcPosition();
+  }
+
+  draw() {
+    const container = this.container;
+    container.canvas.drawAbsorber(this);
+  }
+
+  calcPosition() {
+    var _a;
+
+    const container = this.container;
+    const percentPosition = (_a = this.options.position) !== null && _a !== void 0 ? _a : {
+      x: Math.random() * 100,
+      y: Math.random() * 100
+    };
+    return {
+      x: percentPosition.x / 100 * container.canvas.size.width,
+      y: percentPosition.y / 100 * container.canvas.size.height
+    };
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Utils/EventListeners.js
+
+
+
+
+
+
+
+class EventListeners_EventListeners {
+  constructor(container) {
+    this.container = container;
+    this.canPush = true;
+
+    this.mouseMoveHandler = e => this.mouseTouchMove(e);
+
+    this.touchStartHandler = e => this.mouseTouchMove(e);
+
+    this.touchMoveHandler = e => this.mouseTouchMove(e);
+
+    this.touchEndHandler = () => this.mouseTouchFinish();
+
+    this.mouseLeaveHandler = () => this.mouseTouchFinish();
+
+    this.touchCancelHandler = () => this.mouseTouchFinish();
+
+    this.touchEndClickHandler = e => this.mouseTouchClick(e);
+
+    this.mouseUpHandler = e => this.mouseTouchClick(e);
+
+    this.visibilityChangeHandler = () => this.handleVisibilityChange();
+
+    this.resizeHandler = () => this.handleWindowResize();
+  }
+
+  static manageListener(element, event, handler, add, options) {
+    if (add) {
+      let addOptions = {
+        passive: true
+      };
+
+      if (typeof options === "boolean") {
+        addOptions.capture = options;
+      } else if (options !== undefined) {
+        addOptions = options;
+      }
+
+      EventListeners_EventListeners.addListener(element, event, handler, addOptions);
+    } else {
+      EventListeners_EventListeners.removeListener(element, event, handler, options);
+    }
+  }
+
+  static addListener(element, event, handler, options) {
+    element.addEventListener(event, handler, options);
+  }
+
+  static removeListener(element, event, handler, options) {
+    element.removeEventListener(event, handler, options);
+  }
+
+  addListeners() {
+    this.manageListeners(true);
+  }
+
+  removeListeners() {
+    this.manageListeners(false);
+  }
+
+  manageListeners(add) {
+    const container = this.container;
+    const options = container.options;
+
+    if (options.interactivity.detectsOn === InteractivityDetect.window) {
+      container.interactivity.element = window;
+    } else if (options.interactivity.detectsOn === InteractivityDetect.parent && container.canvas.element) {
+      container.interactivity.element = container.canvas.element.parentNode;
+    } else {
+      container.interactivity.element = container.canvas.element;
+    }
+
+    const interactivityEl = container.interactivity.element;
+
+    if (interactivityEl && (options.interactivity.events.onHover.enable || options.interactivity.events.onClick.enable)) {
+      EventListeners_EventListeners.manageListener(interactivityEl, Constants.mouseMoveEvent, this.mouseMoveHandler, add);
+      EventListeners_EventListeners.manageListener(interactivityEl, Constants.touchStartEvent, this.touchStartHandler, add);
+      EventListeners_EventListeners.manageListener(interactivityEl, Constants.touchMoveEvent, this.touchMoveHandler, add);
+
+      if (!options.interactivity.events.onClick.enable) {
+        EventListeners_EventListeners.manageListener(interactivityEl, Constants.touchEndEvent, this.touchEndHandler, add);
+      }
+
+      EventListeners_EventListeners.manageListener(interactivityEl, Constants.mouseLeaveEvent, this.mouseLeaveHandler, add);
+      EventListeners_EventListeners.manageListener(interactivityEl, Constants.touchCancelEvent, this.touchCancelHandler, add);
+    }
+
+    if (options.interactivity.events.onClick.enable && interactivityEl) {
+      EventListeners_EventListeners.manageListener(interactivityEl, Constants.touchEndEvent, this.touchEndClickHandler, add);
+      EventListeners_EventListeners.manageListener(interactivityEl, Constants.mouseUpEvent, this.mouseUpHandler, add);
+    }
+
+    if (options.interactivity.events.resize) {
+      EventListeners_EventListeners.manageListener(window, Constants.resizeEvent, this.resizeHandler, add);
+    }
+
+    if (document) {
+      EventListeners_EventListeners.manageListener(document, Constants.visibilityChangeEvent, this.visibilityChangeHandler, add, false);
+    }
+  }
+
+  handleWindowResize() {
+    const container = this.container;
+    const options = container.options;
+
+    if (!container.canvas.element) {
+      return;
+    }
+
+    container.canvas.size.width = container.canvas.element.offsetWidth;
+    container.canvas.size.height = container.canvas.element.offsetHeight;
+
+    if (container.retina.isRetina) {
+      container.canvas.size.width *= container.retina.pixelRatio;
+      container.canvas.size.height *= container.retina.pixelRatio;
+    }
+
+    container.canvas.element.width = container.canvas.size.width;
+    container.canvas.element.height = container.canvas.size.height;
+
+    if (!options.particles.move.enable) {
+      container.particles.redraw();
+    }
+
+    container.densityAutoParticles();
+
+    for (const emitter of container.emitters) {
+      emitter.resize();
+    }
+
+    for (const absorber of container.absorbers) {
+      absorber.resize();
+    }
+
+    container.polygon.redraw();
+  }
+
+  handleVisibilityChange() {
+    const container = this.container;
+    const options = container.options;
+
+    if (!options.pauseOnBlur) {
+      return;
+    }
+
+    if (document === null || document === void 0 ? void 0 : document.hidden) {
+      container.pageHidden = true;
+      container.pause();
+    } else {
+      container.pageHidden = false;
+      container.play();
+    }
+  }
+
+  mouseTouchMove(e) {
+    var _a, _b, _c, _d;
+
+    const container = this.container;
+    const options = container.options;
+    let pos;
+
+    if (e.type.startsWith("mouse")) {
+      this.canPush = true;
+      const mouseEvent = e;
+
+      if (((_a = container.interactivity) === null || _a === void 0 ? void 0 : _a.element) === undefined) {
+        return;
+      }
+
+      if (container.interactivity.element === window) {
+        if (container.canvas.element) {
+          const clientRect = container.canvas.element.getBoundingClientRect();
+          pos = {
+            x: mouseEvent.clientX - clientRect.left,
+            y: mouseEvent.clientY - clientRect.top
+          };
+        }
+      } else if (options.interactivity.detectsOn === InteractivityDetect.parent) {
+        const source = mouseEvent.target;
+        const target = mouseEvent.currentTarget;
+
+        if (source && target) {
+          const sourceRect = source.getBoundingClientRect();
+          const targetRect = target.getBoundingClientRect();
+          pos = {
+            x: mouseEvent.offsetX + sourceRect.left - targetRect.left,
+            y: mouseEvent.offsetY + sourceRect.top - targetRect.top
+          };
+        } else {
+          pos = {
+            x: mouseEvent.offsetX || mouseEvent.clientX,
+            y: mouseEvent.offsetY || mouseEvent.clientY
+          };
+        }
+      } else {
+        if (mouseEvent.target === container.canvas.element) {
+          pos = {
+            x: mouseEvent.offsetX || mouseEvent.clientX,
+            y: mouseEvent.offsetY || mouseEvent.clientY
+          };
+        }
+      }
+    } else {
+      this.canPush = e.type !== "touchmove";
+      const touchEvent = e;
+      const lastTouch = touchEvent.touches[touchEvent.touches.length - 1];
+      const canvasRect = (_b = container.canvas.element) === null || _b === void 0 ? void 0 : _b.getBoundingClientRect();
+      pos = {
+        x: lastTouch.clientX - ((_c = canvasRect === null || canvasRect === void 0 ? void 0 : canvasRect.left) !== null && _c !== void 0 ? _c : 0),
+        y: lastTouch.clientY - ((_d = canvasRect === null || canvasRect === void 0 ? void 0 : canvasRect.top) !== null && _d !== void 0 ? _d : 0)
+      };
+    }
+
+    container.interactivity.mouse.position = pos;
+
+    if (container.retina.isRetina && container.interactivity.mouse.position) {
+      container.interactivity.mouse.position.x *= container.retina.pixelRatio;
+      container.interactivity.mouse.position.y *= container.retina.pixelRatio;
+    }
+
+    container.interactivity.status = Constants.mouseMoveEvent;
+  }
+
+  mouseTouchFinish() {
+    const container = this.container;
+    delete container.interactivity.mouse.position;
+    container.interactivity.status = Constants.mouseLeaveEvent;
+  }
+
+  mouseTouchClick(e) {
+    const container = this.container;
+    const options = container.options;
+
+    if (options.polygon === undefined) {
+      return;
+    }
+
+    if (options.polygon.enable && options.polygon.type !== PolygonMaskType.none && options.polygon.type !== PolygonMaskType.inline) {
+      if (container.polygon.checkInsidePolygon(container.interactivity.mouse.position)) {
+        this.doMouseTouchClick(e);
+      }
+    } else {
+      this.doMouseTouchClick(e);
+    }
+  }
+
+  doMouseTouchClick(e) {
+    const container = this.container;
+    const options = container.options;
+
+    if (this.canPush) {
+      if (container.interactivity.mouse.position) {
+        container.interactivity.mouse.clickPosition = {
+          x: container.interactivity.mouse.position.x,
+          y: container.interactivity.mouse.position.y
+        };
+      } else {
+        return;
+      }
+
+      container.interactivity.mouse.clickTime = new Date().getTime();
+      const pushNb = options.interactivity.modes.push.quantity;
+      const removeNb = options.interactivity.modes.remove.quantity;
+
+      switch (options.interactivity.events.onClick.mode) {
+        case ClickMode.push:
+          if (options.particles.move.enable) {
+            container.particles.push(pushNb, container.interactivity.mouse);
+          } else {
+            if (options.interactivity.modes.push.quantity === 1) {
+              container.particles.push(pushNb, container.interactivity.mouse);
+            } else if (options.interactivity.modes.push.quantity > 1) {
+              container.particles.push(pushNb);
+            }
+          }
+
+          break;
+
+        case ClickMode.remove:
+          container.particles.removeQuantity(removeNb);
+          break;
+
+        case ClickMode.bubble:
+          container.bubble.clicking = true;
+          break;
+
+        case ClickMode.repulse:
+          container.repulse.clicking = true;
+          container.repulse.count = 0;
+
+          for (const particle of container.repulse.particles) {
+            particle.velocity.horizontal = particle.initialVelocity.horizontal;
+            particle.velocity.vertical = particle.initialVelocity.vertical;
+          }
+
+          container.repulse.particles = [];
+          container.repulse.finish = false;
+          setTimeout(() => {
+            if (!container.destroyed) {
+              container.repulse.clicking = false;
+            }
+          }, options.interactivity.modes.repulse.duration * 1000);
+          break;
+
+        case ClickMode.absorber:
+          let absorbersModeOptions;
+          const modeAbsorbers = options.interactivity.modes.absorbers;
+
+          if (modeAbsorbers instanceof Array) {
+            if (modeAbsorbers.length > 0) {
+              absorbersModeOptions = Utils_Utils.itemFromArray(modeAbsorbers);
+            }
+          } else {
+            absorbersModeOptions = modeAbsorbers;
+          }
+
+          const absorbersOptions = absorbersModeOptions !== null && absorbersModeOptions !== void 0 ? absorbersModeOptions : options.absorbers instanceof Array ? Utils_Utils.itemFromArray(options.absorbers) : options.absorbers;
+          const bhPosition = container.interactivity.mouse.clickPosition;
+          const absorber = new Absorber_Absorber(container, absorbersOptions, bhPosition);
+          container.absorbers.push(absorber);
+          break;
+
+        case ClickMode.emitter:
+          let emitterModeOptions;
+          const modeEmitters = options.interactivity.modes.emitters;
+
+          if (modeEmitters instanceof Array) {
+            if (modeEmitters.length > 0) {
+              emitterModeOptions = Utils_Utils.itemFromArray(modeEmitters);
+            }
+          } else {
+            emitterModeOptions = modeEmitters;
+          }
+
+          const emitterOptions = emitterModeOptions !== null && emitterModeOptions !== void 0 ? emitterModeOptions : options.emitters instanceof Array ? Utils_Utils.itemFromArray(options.emitters) : options.emitters;
+          const ePosition = container.interactivity.mouse.clickPosition;
+          const emitter = new Emitter_Emitter(container, Utils_Utils.deepExtend({}, emitterOptions), ePosition);
+          container.emitters.push(emitter);
+          break;
+      }
+    }
+
+    if (e.type === "touchend") {
+      setTimeout(() => this.mouseTouchFinish(), 500);
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Enums/PolygonMaskInlineArrangement.js
+var PolygonMaskInlineArrangement;
+
+(function (PolygonMaskInlineArrangement) {
+  PolygonMaskInlineArrangement["equidistant"] = "equidistant";
+  PolygonMaskInlineArrangement["onePerPoint"] = "one-per-point";
+  PolygonMaskInlineArrangement["perPoint"] = "per-point";
+  PolygonMaskInlineArrangement["randomLength"] = "random-length";
+  PolygonMaskInlineArrangement["randomPoint"] = "random-point";
+})(PolygonMaskInlineArrangement || (PolygonMaskInlineArrangement = {}));
+// CONCATENATED MODULE: ./dist/Classes/Interactions/Particles/Linker.js
+
+
+class Linker_Linker {
+  static link(p1, container) {
+    var _a;
+
+    const optOpacity = p1.particlesOptions.lineLinked.opacity;
+    const optDistance = (_a = p1.lineLinkedDistance) !== null && _a !== void 0 ? _a : container.retina.lineLinkedDistance;
+    const pos = {
+      x: p1.position.x + p1.offset.x,
+      y: p1.position.y + p1.offset.y
+    };
+
+    for (const p2 of container.particles.spatialGrid.queryRadiusWithDistance(pos, optDistance)) {
+      if (p1 === p2.particle || !p2.particle.particlesOptions.lineLinked.enable) {
+        continue;
+      }
+
+      const opacityLine = optOpacity - p2.distance * optOpacity / optDistance;
+
+      if (opacityLine > 0) {
+        if (!container.particles.lineLinkedColor) {
+          const optColor = p1.particlesOptions.lineLinked.color;
+          const color = typeof optColor === "string" ? optColor : optColor.value;
+
+          if (color === Constants.randomColorValue) {
+            if (p1.particlesOptions.lineLinked.consent) {
+              container.particles.lineLinkedColor = ColorUtils_ColorUtils.colorToRgb({
+                value: color
+              });
+            } else if (p1.particlesOptions.lineLinked.blink) {
+              container.particles.lineLinkedColor = Constants.randomColorValue;
+            } else {
+              container.particles.lineLinkedColor = Constants.midColorValue;
+            }
+          } else {
+            container.particles.lineLinkedColor = ColorUtils_ColorUtils.colorToRgb({
+              value: color
+            });
+          }
+        }
+
+        if (p2.particle.links.indexOf(p1) == -1 && p1.links.indexOf(p2.particle) == -1) {
+          p1.links.push(p2.particle);
+          container.canvas.drawLinkedLine(p1, p2.particle, opacityLine);
+        }
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Interactions/Particles/Attractor.js
+class Attractor {
+  static attract(p1, container) {
+    var _a;
+
+    const options = container.options;
+    const distance = (_a = p1.lineLinkedDistance) !== null && _a !== void 0 ? _a : container.retina.lineLinkedDistance;
+    const pos1 = {
+      x: p1.position.x + p1.offset.x,
+      y: p1.position.y + p1.offset.y
+    };
+
+    for (const p2 of container.particles.spatialGrid.queryRadius(pos1, distance)) {
+      if (p1 === p2 || p2.particlesOptions.move.attract.enable) {
+        continue;
+      }
+
+      const pos2 = {
+        x: p2.position.x + p2.offset.x,
+        y: p2.position.y + p2.offset.y
+      };
+      const dx = pos1.x - pos2.x;
+      const dy = pos1.y - pos2.y;
+      const rotate = options.particles.move.attract.rotate;
+      const ax = dx / (rotate.x * 1000);
+      const ay = dy / (rotate.y * 1000);
+      p1.velocity.horizontal -= ax;
+      p1.velocity.vertical -= ay;
+      p2.velocity.horizontal += ax;
+      p2.velocity.vertical += ay;
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Interactions/Particles/Collider.js
+
+
+class Collider_Collider {
+  static collide(p1, container) {
+    for (const p2 of container.particles.spatialGrid.queryRadius(p1.position, p1.size.value * 2)) {
+      if (p1 === p2 || !p2.particlesOptions.collisions.enable || p1.particlesOptions.collisions.mode !== p2.particlesOptions.collisions.mode) {
+        continue;
+      }
+
+      const pos1 = {
+        x: p1.position.x + p1.offset.x,
+        y: p1.position.y + p1.offset.y
+      };
+      const pos2 = {
+        x: p2.position.x + p2.offset.x,
+        y: p2.position.y + p2.offset.y
+      };
+      const dist = Utils_Utils.getDistanceBetweenCoordinates(pos1, pos2);
+      const defaultSize = container.retina.sizeValue;
+      const radius1 = this.getRadius(p1, defaultSize);
+      const radius2 = this.getRadius(p2, defaultSize);
+      const distP = radius1 + radius2;
+
+      if (dist <= distP) {
+        this.resolveCollision(p1, p2);
+      }
+    }
+  }
+
+  static getRadius(particle, fallback) {
+    return particle.bubble.radius || particle.size.value || fallback;
+  }
+
+  static resolveCollision(p1, p2) {
+    const pos1 = {
+      x: p1.position.x + p1.offset.x,
+      y: p1.position.y + p1.offset.y
+    };
+    const pos2 = {
+      x: p2.position.x + p2.offset.x,
+      y: p2.position.y + p2.offset.y
+    };
+
+    switch (p1.particlesOptions.collisions.mode) {
+      case CollisionMode.bounce:
+        const xVelocityDiff = p1.velocity.horizontal - p2.velocity.horizontal;
+        const yVelocityDiff = p1.velocity.vertical - p2.velocity.vertical;
+        const xDist = pos2.x - pos1.x;
+        const yDist = pos2.y - pos1.y;
+
+        if (xVelocityDiff * xDist + yVelocityDiff * yDist >= 0) {
+          const angle = -Math.atan2(pos2.y - pos1.y, pos2.x - pos1.x);
+          const m1 = p1.size.value;
+          const m2 = p2.size.value;
+          const u1 = this.rotate(p1.velocity, angle);
+          const u2 = this.rotate(p2.velocity, angle);
+          const v1 = {
+            horizontal: u1.horizontal * (m1 - m2) / (m1 + m2) + u2.horizontal * 2 * m2 / (m1 + m2),
+            vertical: u1.vertical
+          };
+          const v2 = {
+            horizontal: u2.horizontal * (m1 - m2) / (m1 + m2) + u1.horizontal * 2 * m2 / (m1 + m2),
+            vertical: u2.vertical
+          };
+          const vFinal1 = this.rotate(v1, -angle);
+          const vFinal2 = this.rotate(v2, -angle);
+          p1.velocity.horizontal = vFinal1.horizontal;
+          p1.velocity.vertical = vFinal1.vertical;
+          p2.velocity.horizontal = vFinal2.horizontal;
+          p2.velocity.vertical = vFinal2.vertical;
+        }
+
+    }
+  }
+
+  static rotate(velocity, angle) {
+    return {
+      horizontal: velocity.horizontal * Math.cos(angle) - velocity.vertical * Math.sin(angle),
+      vertical: velocity.horizontal * Math.sin(angle) + velocity.vertical * Math.cos(angle)
+    };
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Interactions/Particles/InteractionManager.js
+
+
+
+class InteractionManager_InteractionManager {
+  static interact(p1, container) {
+    if (p1.particlesOptions.lineLinked.enable) {
+      Linker_Linker.link(p1, container);
+    }
+
+    if (p1.particlesOptions.move.attract.enable) {
+      Attractor.attract(p1, container);
+    }
+
+    if (p1.particlesOptions.collisions.enable) {
+      Collider_Collider.collide(p1, container);
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Utils/SpatialGrid.js
+
+class SpatialGrid_SpatialGrid {
+  constructor(canvas) {
+    this.grid = [];
+    this.cellSize = 20;
+    this.widthSegment = Math.round(canvas.width / this.cellSize);
+    this.heightSegment = Math.round(canvas.height / this.cellSize);
+  }
+
+  setGrid(particles, dimension) {
+    const grid = [];
+    const widthSegment = (dimension === null || dimension === void 0 ? void 0 : dimension.width) ? (dimension === null || dimension === void 0 ? void 0 : dimension.width) / this.cellSize : this.widthSegment;
+    const heightSegment = (dimension === null || dimension === void 0 ? void 0 : dimension.height) ? (dimension === null || dimension === void 0 ? void 0 : dimension.height) / this.cellSize : this.heightSegment;
+
+    for (const particle of particles) {
+      const pos = {
+        x: particle.position.x + particle.offset.x,
+        y: particle.position.y + particle.offset.y
+      };
+      const posIndex = this.index(pos);
+      if (!Array.isArray(grid[posIndex.x])) grid[posIndex.x] = [];
+      if (!Array.isArray(grid[posIndex.x][posIndex.y])) grid[posIndex.x][posIndex.y] = [];
+      grid[posIndex.x][posIndex.y].push(particle);
+    }
+
+    this.widthSegment = widthSegment;
+    this.heightSegment = heightSegment;
+    this.grid = grid;
+  }
+
+  queryInCell(position) {
+    const pos = this.index(position);
+    return Array.isArray(this.grid[pos.x]) && Array.isArray(this.grid[pos.x][pos.y]) ? this.grid[pos.x][pos.y] || [] : [];
+  }
+
+  queryRadius(position, radius) {
+    const pos = this.index(position);
+    const rad = this.radius({
+      x: radius,
+      y: radius
+    });
+    const items = this.select(this.indexOp(pos, '-', rad), this.indexOp(pos, '+', rad));
+    const out = [];
+
+    for (const item of items) {
+      const itemPos = {
+        x: item.position.x + item.offset.x,
+        y: item.position.y + item.offset.y
+      };
+
+      if (Utils_Utils.getDistanceBetweenCoordinates(itemPos, position) <= radius) {
+        out.push(item);
+      }
+    }
+
+    return out;
+  }
+
+  queryRadiusWithDistance(position, radius) {
+    const pos = this.index(position);
+    const rad = this.radius({
+      x: radius,
+      y: radius
+    });
+    const items = this.select(this.indexOp(pos, '-', rad), this.indexOp(pos, '+', rad));
+    const out = [];
+
+    for (const item of items) {
+      const itemPos = {
+        x: item.position.x + item.offset.x,
+        y: item.position.y + item.offset.y
+      };
+      const distance = Utils_Utils.getDistanceBetweenCoordinates(itemPos, position);
+
+      if (distance <= radius) {
+        out.push({
+          distance: distance,
+          particle: item
+        });
+      }
+    }
+
+    return out;
+  }
+
+  select(start, end) {
+    const out = [];
+
+    for (let x = start.x; x <= end.x; x++) {
+      if (!Array.isArray(this.grid[x])) {
+        continue;
+      }
+
+      for (let y = start.y; y <= end.y; y++) {
+        if (!Array.isArray(this.grid[x][y])) {
+          continue;
+        }
+
+        for (const item of this.grid[x][y]) {
+          out.push(item);
+        }
+      }
+    }
+
+    return out;
+  }
+
+  index(position) {
+    return {
+      x: Math.round(position.x / this.widthSegment),
+      y: Math.round(position.y / this.heightSegment)
+    };
+  }
+
+  radius(radius) {
+    return {
+      x: Math.ceil(radius.x / this.widthSegment),
+      y: Math.ceil(radius.y / this.heightSegment)
+    };
+  }
+
+  indexOp(left, op, right) {
+    if (op == '+') {
+      return {
+        x: this.clamp(left.x + right.x),
+        y: this.clamp(left.y + right.y)
+      };
+    } else {
+      return {
+        x: this.clamp(left.x - right.x),
+        y: this.clamp(left.y - right.y)
+      };
+    }
+  }
+
+  clamp(num) {
+    return Utils_Utils.clamp(num, 0, this.cellSize);
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Interactions/Mouse/Grabber.js
+
+class Grabber_Grabber {
+  static grab(container) {
+    const options = container.options;
+    const interactivity = options.interactivity;
+
+    if (interactivity.events.onHover.enable && container.interactivity.status === Constants.mouseMoveEvent) {
+      const mousePos = container.interactivity.mouse.position;
+
+      if (mousePos === undefined) {
+        return;
+      }
+
+      const distance = container.retina.grabModeDistance;
+      const query = container.particles.spatialGrid.queryRadiusWithDistance(mousePos, distance);
+
+      for (const {
+        distance,
+        particle
+      } of query) {
+        if (distance <= container.retina.grabModeDistance) {
+          const lineOpacity = interactivity.modes.grab.lineLinked.opacity;
+          const grabDistance = container.retina.grabModeDistance;
+          const opacityLine = lineOpacity - distance * lineOpacity / grabDistance;
+
+          if (opacityLine > 0) {
+            container.canvas.drawGrabLine(particle, opacityLine, mousePos);
+          }
+        }
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Enums/Modes/DivMode.js
+var DivMode;
+
+(function (DivMode) {
+  DivMode["repulse"] = "repulse";
+})(DivMode || (DivMode = {}));
+// CONCATENATED MODULE: ./dist/Classes/Interactions/Mouse/Repulser.js
+
+
+
+
+
+
+class Repulser_Repulser {
+  static repulse(container) {
+    const options = container.options;
+    const interactivity = options.interactivity;
+    const hoverEnabled = interactivity.events.onHover.enable;
+    const clickEnabled = interactivity.events.onClick.enable;
+    const mouseMoveStatus = container.interactivity.status === Constants.mouseMoveEvent;
+    const hoverMode = interactivity.events.onHover.mode;
+    const clickMode = interactivity.events.onClick.mode;
+    const divMode = interactivity.events.onDiv.mode;
+
+    if (mouseMoveStatus && hoverEnabled && Utils_Utils.isInArray(HoverMode.repulse, hoverMode)) {
+      this.hoverRepulse(container);
+    } else if (clickEnabled && Utils_Utils.isInArray(ClickMode.repulse, clickMode)) {
+      this.clickRepulse(container);
+    } else if (interactivity.events.onDiv.enable && Utils_Utils.isInArray(DivMode.repulse, divMode)) {
+      this.divRepulse(container);
+    }
+  }
+
+  static divRepulse(container) {
+    const options = container.options;
+    const elem = document.getElementById(options.interactivity.events.onDiv.elementId);
+
+    if (!elem) {
+      return;
+    }
+
+    const pos = {
+      x: elem.offsetLeft + elem.offsetWidth / 2,
+      y: elem.offsetTop + elem.offsetHeight / 2
+    };
+    let divWidth = elem.offsetWidth / 2;
+
+    if (container.retina.isRetina) {
+      pos.x *= container.retina.pixelRatio;
+      pos.y *= container.retina.pixelRatio;
+      divWidth *= container.retina.pixelRatio;
+    }
+
+    const repulseRadius = divWidth;
+    this.processRepulse(container, pos, repulseRadius);
+  }
+
+  static hoverRepulse(container) {
+    const mousePos = container.interactivity.mouse.position;
+
+    if (!mousePos) {
+      return;
+    }
+
+    const repulseRadius = container.retina.repulseModeDistance;
+    this.processRepulse(container, mousePos, repulseRadius);
+  }
+
+  static processRepulse(container, position, repulseRadius) {
+    for (const particle of container.particles.spatialGrid.queryRadius(position, repulseRadius)) {
+      const dx = particle.position.x - position.x;
+      const dy = particle.position.y - position.y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      const normVec = {
+        x: dx / dist,
+        y: dy / dist
+      };
+      const velocity = container.options.interactivity.modes.repulse.speed * 100;
+      const repulseFactor = Utils_Utils.clamp((1 - Math.pow(dist / repulseRadius, 2)) * velocity, 0, 50);
+      const outMode = particle.particlesOptions.move.outMode;
+      const sizeValue = particle.size.value;
+      const pos = {
+        x: particle.position.x + normVec.x * repulseFactor,
+        y: particle.position.y + normVec.y * repulseFactor
+      };
+
+      if (outMode === OutMode.bounce || outMode === OutMode.bounceVertical || outMode === OutMode.bounceHorizontal) {
+        const isInside = {
+          horizontal: pos.x - sizeValue > 0 && pos.x + sizeValue < container.canvas.size.width,
+          vertical: pos.y - sizeValue > 0 && pos.y + sizeValue < container.canvas.size.height
+        };
+
+        if (outMode === OutMode.bounceVertical || isInside.horizontal) {
+          particle.position.x = pos.x;
+        }
+
+        if (outMode === OutMode.bounceHorizontal || isInside.vertical) {
+          particle.position.y = pos.y;
+        }
+      } else {
+        particle.position.x = pos.x;
+        particle.position.y = pos.y;
+      }
+    }
+  }
+
+  static clickRepulse(container) {
+    if (!container.repulse.finish) {
+      if (!container.repulse.count) {
+        container.repulse.count = 0;
+      }
+
+      container.repulse.count++;
+
+      if (container.repulse.count === container.particles.count) {
+        container.repulse.finish = true;
+      }
+    }
+
+    if (container.repulse.clicking) {
+      const repulseDistance = container.retina.repulseModeDistance;
+      const repulseRadius = Math.pow(repulseDistance / 6, 3);
+      const mouseClickPos = container.interactivity.mouse.clickPosition;
+
+      if (mouseClickPos === undefined) {
+        return;
+      }
+
+      for (const particle of container.particles.spatialGrid.queryRadius(mouseClickPos, repulseRadius)) {
+        if ((particle === null || particle === void 0 ? void 0 : particle.position) === undefined) {
+          continue;
+        }
+
+        const dx = mouseClickPos.x - particle.position.x;
+        const dy = mouseClickPos.y - particle.position.y;
+        const d = dx * dx + dy * dy;
+        const velocity = container.options.interactivity.modes.repulse.speed;
+        const force = -repulseRadius * velocity / d;
+
+        if (d <= repulseRadius) {
+          container.repulse.particles.push(particle);
+          this.processClickRepulse(container, particle, dx, dy, force);
+        }
+      }
+    } else if (container.repulse.clicking === false) {
+      for (const particle of container.repulse.particles) {
+        particle.velocity.horizontal = particle.initialVelocity.horizontal;
+        particle.velocity.vertical = particle.initialVelocity.vertical;
+      }
+
+      container.repulse.particles = [];
+    }
+  }
+
+  static processClickRepulse(container, particle, dx, dy, force) {
+    const options = container.options;
+    const f = Math.atan2(dy, dx);
+    particle.velocity.horizontal = force * Math.cos(f);
+    particle.velocity.vertical = force * Math.sin(f);
+    const outMode = options.particles.move.outMode;
+
+    if (outMode === OutMode.bounce || outMode === OutMode.bounceHorizontal || outMode === OutMode.bounceVertical) {
+      const pos = {
+        x: particle.position.x + particle.velocity.horizontal,
+        y: particle.position.y + particle.velocity.vertical
+      };
+
+      if (outMode !== OutMode.bounceVertical) {
+        if (pos.x + particle.size.value > container.canvas.size.width || pos.x - particle.size.value < 0) {
+          particle.velocity.horizontal = -particle.velocity.horizontal;
+        }
+      }
+
+      if (outMode !== OutMode.bounceHorizontal) {
+        if (pos.y + particle.size.value > container.canvas.size.height || pos.y - particle.size.value < 0) {
+          particle.velocity.vertical = -particle.velocity.vertical;
+        }
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Enums/ProcessBubbleType.js
+var ProcessBubbleType;
+
+(function (ProcessBubbleType) {
+  ProcessBubbleType["color"] = "color";
+  ProcessBubbleType["opacity"] = "opacity";
+  ProcessBubbleType["size"] = "size";
+})(ProcessBubbleType || (ProcessBubbleType = {}));
+// CONCATENATED MODULE: ./dist/Classes/Interactions/Mouse/Bubbler.js
+
+
+
+
+
+
+class Bubbler_Bubbler {
+  static reset(particle) {
+    delete particle.bubble.opacity;
+    delete particle.bubble.radius;
+    delete particle.bubble.color;
+  }
+
+  static bubble(container) {
+    const options = container.options;
+    const hoverEnabled = options.interactivity.events.onHover.enable;
+    const hoverMode = options.interactivity.events.onHover.mode;
+    const clickEnabled = options.interactivity.events.onClick.enable;
+    const clickMode = options.interactivity.events.onClick.mode;
+
+    if (hoverEnabled && Utils_Utils.isInArray(HoverMode.bubble, hoverMode)) {
+      this.hoverBubble(container);
+    } else if (clickEnabled && Utils_Utils.isInArray(ClickMode.bubble, clickMode)) {
+      this.clickBubble(container);
+    }
+  }
+
+  static process(container, particle, distMouse, timeSpent, data) {
+    const bubbleParam = data.bubbleObj.optValue;
+
+    if (bubbleParam === undefined) {
+      return;
+    }
+
+    const options = container.options;
+    const bubbleDuration = options.interactivity.modes.bubble.duration;
+    const bubbleDistance = container.retina.bubbleModeDistance;
+    const particlesParam = data.particlesObj.optValue;
+    const pObjBubble = data.bubbleObj.value;
+    const pObj = data.particlesObj.value || 0;
+    const type = data.type;
+
+    if (bubbleParam !== particlesParam) {
+      if (!container.bubble.durationEnd) {
+        if (distMouse <= bubbleDistance) {
+          const obj = pObjBubble !== null && pObjBubble !== void 0 ? pObjBubble : pObj;
+
+          if (obj !== bubbleParam) {
+            const value = pObj - timeSpent * (pObj - bubbleParam) / bubbleDuration;
+
+            if (type === ProcessBubbleType.size) {
+              particle.bubble.radius = value;
+            }
+
+            if (type === ProcessBubbleType.opacity) {
+              particle.bubble.opacity = value;
+            }
+          }
+        } else {
+          if (type === ProcessBubbleType.size) {
+            delete particle.bubble.radius;
+          }
+
+          if (type === ProcessBubbleType.opacity) {
+            delete particle.bubble.opacity;
+          }
+        }
+      } else if (pObjBubble) {
+        if (type === ProcessBubbleType.size) {
+          delete particle.bubble.radius;
+        }
+
+        if (type === ProcessBubbleType.opacity) {
+          delete particle.bubble.opacity;
+        }
+      }
+    }
+  }
+
+  static clickBubble(container) {
+    var _a;
+
+    const options = container.options;
+    const mouseClickPos = container.interactivity.mouse.clickPosition;
+
+    if (mouseClickPos === undefined) {
+      return;
+    }
+
+    const distance = container.retina.bubbleModeDistance;
+    const query = container.particles.spatialGrid.queryRadius(mouseClickPos, distance);
+
+    for (const particle of query) {
+      const pos = {
+        x: particle.position.x + particle.offset.x,
+        y: particle.position.y + particle.offset.y
+      };
+      const distMouse = Utils_Utils.getDistanceBetweenCoordinates(pos, mouseClickPos);
+      const timeSpent = (new Date().getTime() - (container.interactivity.mouse.clickTime || 0)) / 1000;
+
+      if (container.bubble.clicking) {
+        if (timeSpent > options.interactivity.modes.bubble.duration) {
+          container.bubble.durationEnd = true;
+        }
+
+        if (timeSpent > options.interactivity.modes.bubble.duration * 2) {
+          container.bubble.clicking = false;
+          container.bubble.durationEnd = false;
+        }
+
+        const sizeData = {
+          bubbleObj: {
+            optValue: container.retina.bubbleModeSize,
+            value: particle.bubble.radius
+          },
+          particlesObj: {
+            optValue: (_a = particle.sizeValue) !== null && _a !== void 0 ? _a : container.retina.sizeValue,
+            value: particle.size.value
+          },
+          type: ProcessBubbleType.size
+        };
+        this.process(container, particle, distMouse, timeSpent, sizeData);
+        const opacityData = {
+          bubbleObj: {
+            optValue: options.interactivity.modes.bubble.opacity,
+            value: particle.bubble.opacity
+          },
+          particlesObj: {
+            optValue: particle.particlesOptions.opacity.value,
+            value: particle.opacity.value
+          },
+          type: ProcessBubbleType.opacity
+        };
+        this.process(container, particle, distMouse, timeSpent, opacityData);
+
+        if (!container.bubble.durationEnd) {
+          if (distMouse <= container.retina.bubbleModeDistance) {
+            this.hoverBubbleColor(container, particle);
+          } else {
+            delete particle.bubble.color;
+          }
+        } else {
+          delete particle.bubble.color;
+        }
+      }
+    }
+  }
+
+  static hoverBubble(container) {
+    const mousePos = container.interactivity.mouse.position;
+
+    if (mousePos === undefined) {
+      return;
+    }
+
+    const distance = container.retina.bubbleModeDistance;
+    const query = container.particles.spatialGrid.queryRadiusWithDistance(mousePos, distance);
+
+    for (const {
+      distance,
+      particle
+    } of query) {
+      const ratio = 1 - distance / container.retina.bubbleModeDistance;
+
+      if (distance <= container.retina.bubbleModeDistance) {
+        if (ratio >= 0 && container.interactivity.status === Constants.mouseMoveEvent) {
+          this.hoverBubbleSize(container, particle, ratio);
+          this.hoverBubbleOpacity(container, particle, ratio);
+          this.hoverBubbleColor(container, particle);
+        }
+      } else {
+        this.reset(particle);
+      }
+
+      if (container.interactivity.status === Constants.mouseLeaveEvent) {
+        this.reset(particle);
+      }
+    }
+  }
+
+  static hoverBubbleSize(container, particle, ratio) {
+    var _a;
+
+    const modeSize = container.retina.bubbleModeSize;
+
+    if (modeSize === undefined) {
+      return;
+    }
+
+    const optSize = (_a = particle.sizeValue) !== null && _a !== void 0 ? _a : container.retina.sizeValue;
+    const pSize = particle.size.value;
+    const size = this.calculateBubbleValue(pSize, modeSize, optSize, ratio);
+
+    if (size !== undefined) {
+      particle.bubble.radius = size;
+    }
+  }
+
+  static hoverBubbleOpacity(container, particle, ratio) {
+    const options = container.options;
+    const modeOpacity = options.interactivity.modes.bubble.opacity;
+
+    if (modeOpacity === undefined) {
+      return;
+    }
+
+    const optOpacity = particle.particlesOptions.opacity.value;
+    const pOpacity = particle.opacity.value;
+    const opacity = this.calculateBubbleValue(pOpacity, modeOpacity, optOpacity, ratio);
+
+    if (opacity !== undefined) {
+      particle.bubble.opacity = opacity;
+    }
+  }
+
+  static calculateBubbleValue(particleValue, modeValue, optionsValue, ratio) {
+    if (modeValue > optionsValue) {
+      const size = particleValue + (modeValue - optionsValue) * ratio;
+      return Utils_Utils.clamp(size, particleValue, modeValue);
+    } else if (modeValue < optionsValue) {
+      const size = particleValue - (optionsValue - modeValue) * ratio;
+      return Utils_Utils.clamp(size, modeValue, particleValue);
+    }
+  }
+
+  static hoverBubbleColor(container, particle) {
+    const options = container.options;
+
+    if (particle.bubble.color === undefined) {
+      const modeColor = options.interactivity.modes.bubble.color;
+
+      if (modeColor === undefined) {
+        return;
+      }
+
+      particle.bubble.color = ColorUtils_ColorUtils.colorToRgb(modeColor instanceof Array ? Utils_Utils.itemFromArray(modeColor) : modeColor);
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Interactions/Mouse/Connector.js
+class Connector {
+  static connect(container) {
+    const options = container.options;
+
+    if (options.interactivity.events.onHover.enable && container.interactivity.status == 'mousemove') {
+      const mousePos = container.interactivity.mouse.position || {
+        x: 0,
+        y: 0
+      };
+      const distance = Math.abs(container.retina.connectModeRadius);
+      const query = container.particles.spatialGrid.queryRadius(mousePos, distance);
+      let i = 0;
+
+      for (const p1 of query) {
+        const pos1 = {
+          x: p1.position.x + p1.offset.x,
+          y: p1.position.y + p1.offset.y
+        };
+
+        for (const p2 of query.slice(i + 1)) {
+          const pos2 = {
+            x: p2.position.x + p2.offset.x,
+            y: p2.position.y + p2.offset.y
+          };
+          const distMax = Math.abs(container.retina.connectModeDistance);
+          const xDiff = Math.abs(pos1.x - pos2.x);
+          const yDiff = Math.abs(pos1.y - pos2.y);
+
+          if (xDiff < distMax && yDiff < distMax) {
+            container.canvas.drawConnectLine(p1, p2);
+          }
+        }
+
+        ++i;
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Particles.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Classes_Particles_Particles {
+  constructor(container) {
+    this.container = container;
+    this.array = [];
+    this.interactionsEnabled = false;
+    this.spatialGrid = new SpatialGrid_SpatialGrid(this.container.canvas.size);
+  }
+
+  get count() {
+    return this.array.length;
+  }
+
+  init() {
+    const container = this.container;
+    const options = container.options;
+
+    if (options.polygon.enable && options.polygon.type === PolygonMaskType.inline && (options.polygon.inline.arrangement === PolygonMaskInlineArrangement.onePerPoint || options.polygon.inline.arrangement === PolygonMaskInlineArrangement.perPoint)) {
+      container.polygon.drawPointsOnPolygonPath();
+    } else {
+      for (let i = this.array.length; i < options.particles.number.value; i++) {
+        this.addParticle(new Particle_Particle(container));
+      }
+    }
+
+    this.interactionsEnabled = options.particles.lineLinked.enable || options.particles.move.attract.enable || options.particles.collisions.enable;
+  }
+
+  redraw() {
+    this.clear();
+    this.init();
+    this.draw(0);
+  }
+
+  removeAt(index, quantity) {
+    if (index >= 0 && index <= this.count) {
+      for (const particle of this.array.splice(index, quantity !== null && quantity !== void 0 ? quantity : 1)) {
+        particle.destroy();
+      }
+    }
+  }
+
+  remove(particle) {
+    this.removeAt(this.array.indexOf(particle));
+  }
+
+  update(delta) {
+    const container = this.container;
+    const options = container.options;
+
+    for (let i = 0; i < this.array.length; i++) {
+      const particle = this.array[i];
+      Bubbler_Bubbler.reset(particle);
+      let stillExists = true;
+
+      for (const absorber of container.absorbers) {
+        stillExists = absorber.attract(particle);
+
+        if (!stillExists) {
+          break;
+        }
+      }
+
+      if (!stillExists) {
+        continue;
+      }
+
+      particle.update(i, delta);
+    }
+
+    const hoverMode = options.interactivity.events.onHover.mode;
+    const clickMode = options.interactivity.events.onClick.mode;
+    const divMode = options.interactivity.events.onDiv.mode;
+
+    if (Utils_Utils.isInArray(HoverMode.grab, hoverMode)) {
+      Grabber_Grabber.grab(container);
+    }
+
+    if (Utils_Utils.isInArray(HoverMode.repulse, hoverMode) || Utils_Utils.isInArray(ClickMode.repulse, clickMode) || Utils_Utils.isInArray(DivMode.repulse, divMode)) {
+      Repulser_Repulser.repulse(container);
+    }
+
+    if (Utils_Utils.isInArray(HoverMode.bubble, hoverMode) || Utils_Utils.isInArray(ClickMode.bubble, clickMode)) {
+      Bubbler_Bubbler.bubble(container);
+    }
+
+    if (Utils_Utils.isInArray(HoverMode.connect, hoverMode)) {
+      Connector.connect(container);
+    }
+
+    for (const particle of this.array) {
+      if (this.interactionsEnabled) {
+        InteractionManager_InteractionManager.interact(particle, container);
+      }
+    }
+  }
+
+  draw(delta) {
+    const container = this.container;
+    const options = container.options;
+    container.canvas.clear();
+    this.update(delta);
+    this.spatialGrid.setGrid(this.array, this.container.canvas.size);
+
+    if (options.polygon.enable && options.polygon.draw.enable) {
+      container.polygon.drawPolygon();
+    }
+
+    for (const absorber of container.absorbers) {
+      absorber.draw();
+    }
+
+    for (const p of this.array) {
+      p.draw();
+    }
+  }
+
+  clear() {
+    this.array = [];
+  }
+
+  push(nb, mousePosition) {
+    var _a;
+
+    const container = this.container;
+    const options = container.options;
+    this.pushing = true;
+
+    if (options.particles.number.limit > 0) {
+      if (this.array.length + nb > options.particles.number.limit) {
+        this.removeQuantity(this.array.length + nb - options.particles.number.limit);
+      }
+    }
+
+    let pos;
+
+    if (mousePosition) {
+      pos = (_a = mousePosition.position) !== null && _a !== void 0 ? _a : {
+        x: 0,
+        y: 0
+      };
+    }
+
+    for (let i = 0; i < nb; i++) {
+      this.addParticle(new Particle_Particle(container, pos));
+    }
+
+    if (!options.particles.move.enable) {
+      this.container.play();
+    }
+
+    this.pushing = false;
+  }
+
+  addParticle(particle) {
+    this.array.push(particle);
+  }
+
+  removeQuantity(quantity) {
+    const container = this.container;
+    const options = container.options;
+    this.removeAt(0, quantity);
+
+    if (!options.particles.move.enable) {
+      this.container.play();
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Retina.js
+class Retina {
+  constructor(container) {
+    this.container = container;
+    this.isRetina = false;
+    this.bubbleModeDistance = 0;
+    this.bubbleModeSize = 0;
+    this.connectModeDistance = 0;
+    this.connectModeRadius = 0;
+    this.grabModeDistance = 0;
+    this.repulseModeDistance = 0;
+    this.slowModeRadius = 0;
+    this.lineLinkedDistance = 0;
+    this.lineLinkedWidth = 0;
+    this.moveSpeed = 0;
+    this.sizeValue = 0;
+    this.sizeAnimationSpeed = 0;
+    this.polygonMaskMoveRadius = 0;
+    this.pixelRatio = 1;
+  }
+
+  init() {
+    var _a;
+
+    const container = this.container;
+    const options = container.options;
+
+    if (options.detectRetina && window.devicePixelRatio > 1) {
+      this.pixelRatio = window.devicePixelRatio;
+      this.isRetina = true;
+    } else {
+      this.pixelRatio = 1;
+      this.isRetina = false;
+    }
+
+    let ratio = this.pixelRatio;
+
+    if (container.canvas.element) {
+      const element = container.canvas.element;
+      container.canvas.size.width = element.offsetWidth * ratio;
+      container.canvas.size.height = element.offsetHeight * ratio;
+    }
+
+    const particles = options.particles;
+    this.lineLinkedDistance = particles.lineLinked.distance * ratio;
+    this.lineLinkedWidth = particles.lineLinked.width * ratio;
+    this.moveSpeed = particles.move.speed * ratio;
+    this.sizeValue = particles.size.value * ratio;
+    this.sizeAnimationSpeed = particles.size.animation.speed * ratio;
+    const interactivity = options.interactivity;
+    this.connectModeDistance = interactivity.modes.connect.distance * ratio;
+    this.connectModeRadius = interactivity.modes.connect.radius * ratio;
+    this.grabModeDistance = interactivity.modes.grab.distance * ratio;
+    this.repulseModeDistance = interactivity.modes.repulse.distance * ratio;
+    this.slowModeRadius = interactivity.modes.slow.radius * ratio;
+    this.bubbleModeDistance = interactivity.modes.bubble.distance * ratio;
+    this.bubbleModeSize = (_a = interactivity.modes.bubble.size) !== null && _a !== void 0 ? _a : this.sizeValue * ratio;
+    this.polygonMaskMoveRadius = options.polygon.move.radius * ratio;
+  }
+
+  initParticle(particle) {
+    const particlesOptions = particle.particlesOptions;
+    const ratio = this.pixelRatio;
+    particle.lineLinkedDistance = particlesOptions.lineLinked.distance * ratio;
+    particle.lineLinkedWidth = particlesOptions.lineLinked.width * ratio;
+    particle.moveSpeed = particlesOptions.move.speed * ratio;
+    particle.sizeValue = particlesOptions.size.value * ratio;
+
+    if (typeof particlesOptions.size.random !== "boolean") {
+      particle.randomMinimumSize = particlesOptions.size.random.minimumValue;
+    }
+
+    particle.sizeAnimationSpeed = particlesOptions.size.animation.speed * ratio;
+  }
+
+  reset() {}
+
+}
+// CONCATENATED MODULE: ./dist/Classes/PolygonMask.js
+
+
+
+
+
+
+class PolygonMask_PolygonMask {
+  constructor(container) {
+    this.container = container;
+    this.dimension = {
+      height: 0,
+      width: 0
+    };
+    this.paths = [];
+    this.path2DSupported = window.hasOwnProperty("Path2D");
+  }
+
+  checkInsidePolygon(position) {
+    const container = this.container;
+    const options = container.options;
+
+    if (!options.polygon.enable || options.polygon.type === PolygonMaskType.none || options.polygon.type === PolygonMaskType.inline) {
+      return true;
+    }
+
+    if (!this.raw) {
+      throw new Error(Constants.noPolygonFound);
+    }
+
+    const x = position ? position.x : Math.random() * container.canvas.size.width;
+    const y = position ? position.y : Math.random() * container.canvas.size.height;
+    let inside = false;
+
+    for (let i = 0, j = this.raw.length - 1; i < this.raw.length; j = i++) {
+      const xi = this.raw[i].x;
+      const yi = this.raw[i].y;
+      const xj = this.raw[j].x;
+      const yj = this.raw[j].y;
+      const intersect = yi > y !== yj > y && x < (xj - xi) * (y - yi) / (yj - yi) + xi;
+
+      if (intersect) {
+        inside = !inside;
+      }
+    }
+
+    if (options.polygon.type === PolygonMaskType.inside) {
+      return inside;
+    } else if (options.polygon.type === PolygonMaskType.outside) {
+      return !inside;
+    }
+
+    return false;
+  }
+
+  redraw() {
+    const container = this.container;
+    const options = container.options;
+
+    if (options.polygon.enable && options.polygon.type !== PolygonMaskType.none) {
+      if (this.redrawTimeout) {
+        clearTimeout(this.redrawTimeout);
+      }
+
+      this.redrawTimeout = window.setTimeout(() => {
+        this.parseSvgPathToPolygon().then(data => {
+          this.raw = data;
+          this.createPath2D();
+          container.particles.redraw();
+        });
+      }, 250);
+    }
+  }
+
+  init() {
+    return __awaiter(this, void 0, void 0, function* () {
+      const container = this.container;
+      const options = container.options;
+
+      if (options.polygon.enable && options.polygon.url) {
+        this.raw = yield this.parseSvgPathToPolygon(options.polygon.url);
+        this.createPath2D();
+      }
+    });
+  }
+
+  reset() {
+    delete this.raw;
+    this.paths = [];
+    delete this.svg;
+  }
+
+  randomPointInPolygon() {
+    const container = this.container;
+    const options = container.options;
+    let position;
+
+    if (options.polygon.type === PolygonMaskType.inline) {
+      switch (options.polygon.inline.arrangement) {
+        case PolygonMaskInlineArrangement.randomPoint:
+          position = this.getRandomPointOnPolygonPath();
+          break;
+
+        case PolygonMaskInlineArrangement.randomLength:
+          position = this.getRandomPointOnPolygonPathByLength();
+          break;
+
+        case PolygonMaskInlineArrangement.equidistant:
+          position = this.getEquidistantPointOnPolygonPathByIndex(container.particles.count);
+          break;
+
+        case PolygonMaskInlineArrangement.onePerPoint:
+        case PolygonMaskInlineArrangement.perPoint:
+        default:
+          position = this.getPointOnPolygonPathByIndex(container.particles.count);
+      }
+    } else {
+      position = {
+        x: Math.random() * container.canvas.size.width,
+        y: Math.random() * container.canvas.size.height
+      };
+    }
+
+    if (this.checkInsidePolygon(position)) {
+      return position;
+    } else {
+      return this.randomPointInPolygon();
+    }
+  }
+
+  parseSvgPathToPolygon(svgUrl) {
+    var _a;
+
+    return __awaiter(this, void 0, void 0, function* () {
+      const container = this.container;
+      const options = container.options;
+      const url = svgUrl || options.polygon.url;
+
+      if (!this.paths.length || !this.svg) {
+        const req = yield fetch(url);
+
+        if (req.ok) {
+          const xml = yield req.text();
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(xml, "image/svg+xml");
+          this.svg = doc.getElementsByTagName("svg")[0];
+          const svgPaths = doc.getElementsByTagName("path");
+
+          for (let i = 0; i < svgPaths.length; i++) {
+            const path = svgPaths.item(i);
+
+            if (path) {
+              this.paths.push({
+                element: path,
+                length: path.getTotalLength()
+              });
+            }
+          }
+        } else {
+          throw new Error("tsParticles Error - Error occurred during polygon mask download");
+        }
+      }
+
+      const pxRatio = container.retina.pixelRatio;
+      const scale = options.polygon.scale / pxRatio;
+      this.dimension.width = parseFloat(this.svg.getAttribute("width") || "0") * scale;
+      this.dimension.height = parseFloat(this.svg.getAttribute("height") || "0") * scale;
+      const position = (_a = options.polygon.position) !== null && _a !== void 0 ? _a : {
+        x: 50,
+        y: 50
+      };
+      this.offset = {
+        x: container.canvas.size.width * position.x / (100 * pxRatio) - this.dimension.width / 2,
+        y: container.canvas.size.height * position.y / (100 * pxRatio) - this.dimension.height / 2
+      };
+      const polygonRaw = [];
+
+      for (const path of this.paths) {
+        const len = path.element.pathSegList.numberOfItems;
+        const p = {
+          x: 0,
+          y: 0
+        };
+
+        for (let i = 0; i < len; i++) {
+          const segment = path.element.pathSegList.getItem(i);
+
+          switch (segment.pathSegType) {
+            case window.SVGPathSeg.PATHSEG_MOVETO_ABS:
+            case window.SVGPathSeg.PATHSEG_LINETO_ABS:
+            case window.SVGPathSeg.PATHSEG_CURVETO_CUBIC_ABS:
+            case window.SVGPathSeg.PATHSEG_CURVETO_QUADRATIC_ABS:
+            case window.SVGPathSeg.PATHSEG_ARC_ABS:
+            case window.SVGPathSeg.PATHSEG_CURVETO_CUBIC_SMOOTH_ABS:
+            case window.SVGPathSeg.PATHSEG_CURVETO_QUADRATIC_SMOOTH_ABS:
+              const absSeg = segment;
+              p.x = absSeg.x;
+              p.y = absSeg.y;
+              break;
+
+            case window.SVGPathSeg.PATHSEG_LINETO_HORIZONTAL_ABS:
+              p.x = segment.x;
+              break;
+
+            case window.SVGPathSeg.PATHSEG_LINETO_VERTICAL_ABS:
+              p.y = segment.y;
+              break;
+
+            case window.SVGPathSeg.PATHSEG_LINETO_REL:
+            case window.SVGPathSeg.PATHSEG_MOVETO_REL:
+            case window.SVGPathSeg.PATHSEG_CURVETO_CUBIC_REL:
+            case window.SVGPathSeg.PATHSEG_CURVETO_QUADRATIC_REL:
+            case window.SVGPathSeg.PATHSEG_ARC_REL:
+            case window.SVGPathSeg.PATHSEG_CURVETO_CUBIC_SMOOTH_REL:
+            case window.SVGPathSeg.PATHSEG_CURVETO_QUADRATIC_SMOOTH_REL:
+              const relSeg = segment;
+              p.x += relSeg.x;
+              p.y += relSeg.y;
+              break;
+
+            case window.SVGPathSeg.PATHSEG_LINETO_HORIZONTAL_REL:
+              p.x += segment.x;
+              break;
+
+            case window.SVGPathSeg.PATHSEG_LINETO_VERTICAL_REL:
+              p.y += segment.y;
+              break;
+
+            case window.SVGPathSeg.PATHSEG_UNKNOWN:
+            case window.SVGPathSeg.PATHSEG_CLOSEPATH:
+              continue;
+          }
+
+          polygonRaw.push({
+            x: p.x * scale + this.offset.x,
+            y: p.y * scale + this.offset.y
+          });
+        }
+      }
+
+      return polygonRaw;
+    });
+  }
+
+  drawPolygon() {
+    const container = this.container;
+    container.canvas.drawPolygonMask();
+  }
+
+  drawPointsOnPolygonPath() {
+    const container = this.container;
+
+    if (this.raw) {
+      for (const item of this.raw) {
+        const position = {
+          x: item.x,
+          y: item.y
+        };
+        container.particles.addParticle(new Particle_Particle(container, position));
+      }
+    }
+  }
+
+  getRandomPointOnPolygonPath() {
+    if (!this.raw || !this.raw.length) throw new Error(Constants.noPolygonDataLoaded);
+    const coords = Utils_Utils.itemFromArray(this.raw);
+    return {
+      x: coords.x,
+      y: coords.y
+    };
+  }
+
+  getRandomPointOnPolygonPathByLength() {
+    var _a, _b;
+
+    const container = this.container;
+    const options = container.options;
+    if (!this.raw || !this.raw.length || !this.paths.length) throw new Error(Constants.noPolygonDataLoaded);
+    const path = Utils_Utils.itemFromArray(this.paths);
+    const distance = Math.floor(Math.random() * path.length) + 1;
+    const point = path.element.getPointAtLength(distance);
+    return {
+      x: point.x * options.polygon.scale + (((_a = this.offset) === null || _a === void 0 ? void 0 : _a.x) || 0),
+      y: point.y * options.polygon.scale + (((_b = this.offset) === null || _b === void 0 ? void 0 : _b.y) || 0)
+    };
+  }
+
+  getEquidistantPointOnPolygonPathByIndex(index) {
+    var _a, _b, _c, _d, _e, _f;
+
+    const container = this.container;
+    const options = container.options;
+    if (!this.raw || !this.raw.length || !this.paths.length) throw new Error(Constants.noPolygonDataLoaded);
+    let offset = 0;
+    let point;
+    const totalLength = this.paths.reduce((tot, path) => tot + path.length, 0);
+    const distance = totalLength / options.particles.number.value;
+
+    for (const path of this.paths) {
+      const pathDistance = distance * index - offset;
+
+      if (pathDistance <= path.length) {
+        point = path.element.getPointAtLength(pathDistance);
+        break;
+      } else {
+        offset += path.length;
+      }
+    }
+
+    return {
+      x: ((_a = point === null || point === void 0 ? void 0 : point.x) !== null && _a !== void 0 ? _a : 0) * options.polygon.scale + ((_c = (_b = this.offset) === null || _b === void 0 ? void 0 : _b.x) !== null && _c !== void 0 ? _c : 0),
+      y: ((_d = point === null || point === void 0 ? void 0 : point.y) !== null && _d !== void 0 ? _d : 0) * options.polygon.scale + ((_f = (_e = this.offset) === null || _e === void 0 ? void 0 : _e.y) !== null && _f !== void 0 ? _f : 0)
+    };
+  }
+
+  getPointOnPolygonPathByIndex(index) {
+    if (!this.raw || !this.raw.length) throw new Error(Constants.noPolygonDataLoaded);
+    const coords = this.raw[index % this.raw.length];
+    return {
+      x: coords.x,
+      y: coords.y
+    };
+  }
+
+  createPath2D() {
+    var _a;
+
+    if (!this.path2DSupported) {
+      return;
+    }
+
+    for (const path of this.paths) {
+      const pathData = (_a = path.element) === null || _a === void 0 ? void 0 : _a.getAttribute("d");
+
+      if (pathData) {
+        const path2d = new Path2D(pathData);
+        const matrix = document.createElementNS("http://www.w3.org/2000/svg", "svg").createSVGMatrix();
+        const finalPath = new Path2D();
+        const transform = matrix.scale(this.container.options.polygon.scale);
+
+        if (finalPath.addPath) {
+          finalPath.addPath(path2d, transform);
+          path.path2d = finalPath;
+        } else {
+          delete path.path2d;
+        }
+      } else {
+        delete path.path2d;
+      }
+
+      if (!path.path2d && this.raw) {
+        path.path2d = new Path2D();
+        path.path2d.moveTo(this.raw[0].x, this.raw[0].y);
+        this.raw.forEach((pos, i) => {
+          var _a;
+
+          if (i > 0) {
+            (_a = path.path2d) === null || _a === void 0 ? void 0 : _a.lineTo(pos.x, pos.y);
+          }
+        });
+        path.path2d.closePath();
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/FrameManager.js
+class FrameManager {
+  constructor(container) {
+    this.container = container;
+  }
+
+  nextFrame(timestamp) {
+    const container = this.container;
+    const options = container.options;
+    const fpsLimit = options.fpsLimit > 0 ? options.fpsLimit : 60;
+
+    if (container.lastFrameTime !== undefined && timestamp < container.lastFrameTime + 1000 / fpsLimit) {
+      container.play();
+      return;
+    }
+
+    const delta = timestamp - container.lastFrameTime;
+    container.lastFrameTime = timestamp;
+    container.particles.draw(delta);
+
+    if (!options.particles.move.enable) {
+      container.pause();
+    } else {
+      container.play();
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Interactivity/Events/ClickEvent.js
+class ClickEvent {
+  constructor() {
+    this.enable = false;
+    this.mode = [];
+  }
+
+  load(data) {
+    if (data !== undefined) {
+      if (data.enable !== undefined) {
+        this.enable = data.enable;
+      }
+
+      if (data.mode !== undefined) {
+        this.mode = data.mode;
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Interactivity/Events/DivEvent.js
+class DivEvent {
+  constructor() {
+    this.elementId = "";
+    this.enable = false;
+    this.mode = [];
+  }
+
+  get el() {
+    return this.elementId;
+  }
+
+  set el(value) {
+    this.elementId = value;
+  }
+
+  load(data) {
+    var _a;
+
+    if (data !== undefined) {
+      const elementId = (_a = data.elementId) !== null && _a !== void 0 ? _a : data.el;
+
+      if (elementId !== undefined) {
+        this.elementId = elementId;
+      }
+
+      if (data.enable !== undefined) {
+        this.enable = data.enable;
+      }
+
+      if (data.mode !== undefined) {
+        this.mode = data.mode;
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Interactivity/Events/Parallax.js
+class Parallax {
+  constructor() {
+    this.enable = false;
+    this.force = 2;
+    this.smooth = 10;
+  }
+
+  load(data) {
+    if (data !== undefined) {
+      if (data.enable !== undefined) {
+        this.enable = data.enable;
+      }
+
+      if (data.force !== undefined) {
+        this.force = data.force;
+      }
+
+      if (data.smooth !== undefined) {
+        this.smooth = data.smooth;
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Interactivity/Events/HoverEvent.js
+
+class HoverEvent_HoverEvent {
+  constructor() {
+    this.enable = false;
+    this.mode = [];
+    this.parallax = new Parallax();
+  }
+
+  load(data) {
+    if (data !== undefined) {
+      if (data.enable !== undefined) {
+        this.enable = data.enable;
+      }
+
+      if (data.mode !== undefined) {
+        this.mode = data.mode;
+      }
+
+      this.parallax.load(data.parallax);
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Interactivity/Events/Events.js
+
+
+
+class Events_Events {
+  constructor() {
+    this.onClick = new ClickEvent();
+    this.onDiv = new DivEvent();
+    this.onHover = new HoverEvent_HoverEvent();
+    this.resize = true;
+  }
+
+  get onclick() {
+    return this.onClick;
+  }
+
+  set onclick(value) {
+    this.onClick = value;
+  }
+
+  get ondiv() {
+    return this.onDiv;
+  }
+
+  set ondiv(value) {
+    this.onDiv = value;
+  }
+
+  get onhover() {
+    return this.onHover;
+  }
+
+  set onhover(value) {
+    this.onHover = value;
+  }
+
+  load(data) {
+    var _a, _b, _c;
+
+    if (data !== undefined) {
+      this.onClick.load((_a = data.onClick) !== null && _a !== void 0 ? _a : data.onclick);
+      this.onDiv.load((_b = data.onDiv) !== null && _b !== void 0 ? _b : data.ondiv);
+      this.onHover.load((_c = data.onHover) !== null && _c !== void 0 ? _c : data.onhover);
+
+      if (data.resize !== undefined) {
+        this.resize = data.resize;
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Interactivity/Modes/Bubble.js
+
+class Bubble_Bubble {
+  constructor() {
+    this.distance = 200;
+    this.duration = 0.4;
+  }
+
+  load(data) {
+    if (data !== undefined) {
+      if (data.distance !== undefined) {
+        this.distance = data.distance;
+      }
+
+      if (data.duration !== undefined) {
+        this.duration = data.duration;
+      }
+
+      if (data.opacity !== undefined) {
+        this.opacity = data.opacity;
+      }
+
+      if (data.color !== undefined) {
+        if (data.color instanceof Array) {
+          this.color = data.color.map(s => OptionsColor.create(undefined, s));
+        } else {
+          if (this.color instanceof Array) {
+            this.color = new OptionsColor();
+          }
+
+          this.color = OptionsColor.create(this.color, data.color);
+        }
+      }
+
+      if (data.size !== undefined) {
+        this.size = data.size;
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Interactivity/Modes/ConnectLineLinked.js
+class ConnectLineLinked {
+  constructor() {
+    this.opacity = 0.5;
+  }
+
+  load(data) {
+    if (data !== undefined) {
+      if (data.opacity !== undefined) {
+        this.opacity = data.opacity;
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Interactivity/Modes/Connect.js
+
+class Connect_Connect {
+  constructor() {
+    this.distance = 80;
+    this.lineLinked = new ConnectLineLinked();
+    this.radius = 60;
+  }
+
+  get line_linked() {
+    return this.lineLinked;
+  }
+
+  set line_linked(value) {
+    this.lineLinked = value;
+  }
+
+  load(data) {
+    var _a;
+
+    if (data !== undefined) {
+      if (data.distance !== undefined) {
+        this.distance = data.distance;
+      }
+
+      this.lineLinked.load((_a = data.lineLinked) !== null && _a !== void 0 ? _a : data.line_linked);
+
+      if (data.radius !== undefined) {
+        this.radius = data.radius;
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Interactivity/Modes/GrabLineLinked.js
+class GrabLineLinked {
+  constructor() {
+    this.opacity = 1;
+  }
+
+  load(data) {
+    if (data !== undefined) {
+      if (data.opacity !== undefined) {
+        this.opacity = data.opacity;
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Interactivity/Modes/Grab.js
+
+class Grab_Grab {
+  constructor() {
+    this.distance = 100;
+    this.lineLinked = new GrabLineLinked();
+  }
+
+  get line_linked() {
+    return this.lineLinked;
+  }
+
+  set line_linked(value) {
+    this.lineLinked = value;
+  }
+
+  load(data) {
+    var _a;
+
+    if (data !== undefined) {
+      if (data.distance !== undefined) {
+        this.distance = data.distance;
+      }
+
+      this.lineLinked.load((_a = data.lineLinked) !== null && _a !== void 0 ? _a : data.line_linked);
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Interactivity/Modes/Remove.js
+class Remove {
+  constructor() {
+    this.quantity = 2;
+  }
+
+  get particles_nb() {
+    return this.quantity;
+  }
+
+  set particles_nb(value) {
+    this.quantity = value;
+  }
+
+  load(data) {
+    var _a;
+
+    if (data !== undefined) {
+      const quantity = (_a = data.quantity) !== null && _a !== void 0 ? _a : data.particles_nb;
+
+      if (quantity !== undefined) {
+        this.quantity = quantity;
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Interactivity/Modes/Push.js
+class Push {
+  constructor() {
+    this.quantity = 4;
+  }
+
+  get particles_nb() {
+    return this.quantity;
+  }
+
+  set particles_nb(value) {
+    this.quantity = value;
+  }
+
+  load(data) {
+    var _a;
+
+    if (data !== undefined) {
+      const quantity = (_a = data.quantity) !== null && _a !== void 0 ? _a : data.particles_nb;
+
+      if (quantity !== undefined) {
+        this.quantity = quantity;
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Interactivity/Modes/Repulse.js
+class Repulse {
+  constructor() {
+    this.distance = 200;
+    this.duration = 0.4;
+    this.speed = 1;
+  }
+
+  load(data) {
+    if (data !== undefined) {
+      if (data.distance !== undefined) {
+        this.distance = data.distance;
+      }
+
+      if (data.duration !== undefined) {
+        this.duration = data.duration;
+      }
+
+      if (data.speed !== undefined) {
+        this.speed = data.speed;
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Interactivity/Modes/Slow.js
+class Slow {
+  constructor() {
+    this.factor = 3;
+    this.radius = 200;
+  }
+
+  get active() {
+    return false;
+  }
+
+  set active(_value) {}
+
+  load(data) {
+    if (data !== undefined) {
+      if (data.factor !== undefined) {
+        this.factor = data.factor;
+      }
+
+      if (data.radius !== undefined) {
+        this.radius = data.radius;
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Emitters/EmitterRate.js
+class EmitterRate {
+  constructor() {
+    this.quantity = 1;
+    this.delay = 0.1;
+  }
+
+  load(data) {
+    if (data !== undefined) {
+      if (data.quantity !== undefined) {
+        this.quantity = data.quantity;
+      }
+
+      if (data.delay !== undefined) {
+        this.delay = data.delay;
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Emitters/EmitterLife.js
+class EmitterLife {
+  constructor() {}
+
+  load(data) {
+    if (data !== undefined) {
+      if (data.count !== undefined) {
+        this.count = data.count;
+      }
+
+      if (data.delay !== undefined) {
+        this.delay = data.delay;
+      }
+
+      if (data.duration !== undefined) {
+        this.duration = data.duration;
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Emitters/Emitter.js
+
+
+
+
+class Emitters_Emitter_Emitter {
+  constructor() {
+    this.direction = MoveDirection.none;
+    this.life = new EmitterLife();
+    this.rate = new EmitterRate();
+  }
+
+  load(data) {
+    if (data !== undefined) {
+      if (data.size !== undefined) {
+        this.size = {
+          height: data.size.height,
+          width: data.size.width
+        };
+      }
+
+      if (data.direction !== undefined) {
+        this.direction = data.direction;
+      }
+
+      this.life.load(data.life);
+
+      if (data.particles !== undefined) {
+        this.particles = Utils_Utils.deepExtend({}, data.particles);
+      }
+
+      this.rate.load(data.rate);
+
+      if (data.position !== undefined) {
+        this.position = {
+          x: data.position.x,
+          y: data.position.y
+        };
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Absorbers/AbsorberRandomSize.js
+class AbsorberRandomSize {
+  constructor() {
+    this.enable = false;
+    this.minimumValue = 1;
+  }
+
+  load(data) {
+    if (data !== undefined) {
+      if (data.enable !== undefined) {
+        this.enable = data.enable;
+      }
+
+      if (data.minimumValue !== undefined) {
+        this.minimumValue = data.minimumValue;
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Absorbers/AbsorberSize.js
+
+class AbsorberSize_AbsorberSize {
+  constructor() {
+    this.density = 5;
+    this.random = new AbsorberRandomSize();
+    this.value = 50;
+  }
+
+  load(data) {
+    if (data !== undefined) {
+      if (data.value !== undefined) {
+        this.value = data.value;
+      }
+
+      if (data.random !== undefined) {
+        if (typeof data.random === "boolean") {
+          this.random.load({
+            enable: data.random
+          });
+        } else {
+          this.random.load(data.random);
+        }
+      }
+
+      if (data.limit !== undefined) {
+        this.limit = data.limit;
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Absorbers/Absorber.js
+
+
+class Absorbers_Absorber_Absorber {
+  constructor() {
+    this.color = new OptionsColor();
+    this.color.value = "#000000";
+    this.opacity = 1;
+    this.size = new AbsorberSize_AbsorberSize();
+  }
+
+  load(data) {
+    if (data !== undefined) {
+      if (data.color !== undefined) {
+        this.color = OptionsColor.create(this.color, data.color);
+      }
+
+      if (data.opacity !== undefined) {
+        this.opacity = data.opacity;
+      }
+
+      if (data.position !== undefined) {
+        this.position = {
+          x: data.position.x,
+          y: data.position.y
+        };
+      }
+
+      if (data.size !== undefined) {
+        this.size.load(data.size);
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Interactivity/Modes/Modes.js
+
+
+
+
+
+
+
+
+
+class Modes_Modes {
+  constructor() {
+    this.absorbers = [];
+    this.bubble = new Bubble_Bubble();
+    this.connect = new Connect_Connect();
+    this.emitters = [];
+    this.grab = new Grab_Grab();
+    this.push = new Push();
+    this.remove = new Remove();
+    this.repulse = new Repulse();
+    this.slow = new Slow();
+  }
+
+  load(data) {
+    if (data !== undefined) {
+      this.bubble.load(data.bubble);
+      this.connect.load(data.connect);
+      this.grab.load(data.grab);
+      this.push.load(data.push);
+      this.remove.load(data.remove);
+      this.repulse.load(data.repulse);
+      this.slow.load(data.slow);
+
+      if (data.emitters !== undefined) {
+        if (data.emitters instanceof Array) {
+          this.emitters = data.emitters.map(s => {
+            const tmp = new Emitters_Emitter_Emitter();
+            tmp.load(s);
+            return tmp;
+          });
+        } else {
+          if (this.emitters instanceof Array) {
+            this.emitters = new Emitters_Emitter_Emitter();
+          }
+
+          this.emitters.load(data.emitters);
+        }
+      }
+
+      if (data.absorbers !== undefined) {
+        if (data.absorbers instanceof Array) {
+          this.absorbers = data.absorbers.map(s => {
+            const tmp = new Absorbers_Absorber_Absorber();
+            tmp.load(s);
+            return tmp;
+          });
+        } else {
+          if (this.absorbers instanceof Array) {
+            this.absorbers = new Absorbers_Absorber_Absorber();
+          }
+
+          this.absorbers.load(data.absorbers);
+        }
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Interactivity/Interactivity.js
+
+
+
+
+class Interactivity_Interactivity {
+  constructor() {
+    this.detectsOn = InteractivityDetect.canvas;
+    this.events = new Events_Events();
+    this.modes = new Modes_Modes();
+  }
+
+  get detect_on() {
+    return this.detectsOn;
+  }
+
+  set detect_on(value) {
+    this.detectsOn = value;
+  }
+
+  load(data) {
+    var _a, _b, _c;
+
+    if (data !== undefined) {
+      const detectsOn = (_a = data.detectsOn) !== null && _a !== void 0 ? _a : data.detect_on;
+
+      if (detectsOn !== undefined) {
+        this.detectsOn = detectsOn;
+      }
+
+      this.events.load(data.events);
+      this.modes.load(data.modes);
+
+      if (((_c = (_b = data.modes) === null || _b === void 0 ? void 0 : _b.slow) === null || _c === void 0 ? void 0 : _c.active) === true) {
+        if (this.events.onHover.mode instanceof Array) {
+          if (this.events.onHover.mode.indexOf(HoverMode.slow) < 0) {
+            this.events.onHover.mode.push(HoverMode.slow);
+          }
+        } else if (this.events.onHover.mode !== HoverMode.slow) {
+          this.events.onHover.mode = [this.events.onHover.mode, HoverMode.slow];
+        }
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/PolygonMask/PolygonMaskDrawStroke.js
+
+
+class PolygonMaskDrawStroke_PolygonMaskDrawStroke {
+  constructor() {
+    this.color = new OptionsColor();
+    this.width = 0.5;
+    this.opacity = 1;
+  }
+
+  load(data) {
+    var _a;
+
+    if (data !== undefined) {
+      this.color = OptionsColor.create(this.color, data.color);
+
+      if (typeof this.color.value === "string") {
+        this.opacity = (_a = ColorUtils_ColorUtils.stringToAlpha(this.color.value)) !== null && _a !== void 0 ? _a : this.opacity;
+      }
+
+      if (data.opacity !== undefined) {
+        this.opacity = data.opacity;
+      }
+
+      if (data.width !== undefined) {
+        this.width = data.width;
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/PolygonMask/Draw.js
+
+
+class Draw_Draw {
+  constructor() {
+    this.enable = false;
+    this.stroke = new PolygonMaskDrawStroke_PolygonMaskDrawStroke();
+  }
+
+  get lineWidth() {
+    return this.stroke.width;
+  }
+
+  set lineWidth(value) {
+    this.stroke.width = value;
+  }
+
+  get lineColor() {
+    return this.stroke.color;
+  }
+
+  set lineColor(value) {
+    this.stroke.color = OptionsColor.create(this.stroke.color, value);
+  }
+
+  load(data) {
+    var _a;
+
+    if (data !== undefined) {
+      if (data.enable !== undefined) {
+        this.enable = data.enable;
+      }
+
+      const stroke = (_a = data.stroke) !== null && _a !== void 0 ? _a : {
+        color: data.lineColor,
+        width: data.lineWidth
+      };
+      this.stroke.load(stroke);
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Enums/PolygonMaskMoveType.js
+var PolygonMaskMoveType;
+
+(function (PolygonMaskMoveType) {
+  PolygonMaskMoveType["path"] = "path";
+  PolygonMaskMoveType["radius"] = "radius";
+})(PolygonMaskMoveType || (PolygonMaskMoveType = {}));
+// CONCATENATED MODULE: ./dist/Classes/Options/PolygonMask/Move.js
+
+class PolygonMask_Move_Move {
+  constructor() {
+    this.radius = 10;
+    this.type = PolygonMaskMoveType.path;
+  }
+
+  load(data) {
+    if (data !== undefined) {
+      if (data.radius !== undefined) {
+        this.radius = data.radius;
+      }
+
+      if (data.type !== undefined) {
+        this.type = data.type;
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/PolygonMask/PolygonInline.js
+
+class PolygonInline_PolygonInline {
+  constructor() {
+    this.arrangement = PolygonMaskInlineArrangement.onePerPoint;
+  }
+
+  load(data) {
+    if (data !== undefined) {
+      if (data.arrangement !== undefined) {
+        this.arrangement = data.arrangement;
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/PolygonMask/PolygonMask.js
+
+
+
+
+class PolygonMask_PolygonMask_PolygonMask {
+  constructor() {
+    this.draw = new Draw_Draw();
+    this.enable = false;
+    this.inline = new PolygonInline_PolygonInline();
+    this.move = new PolygonMask_Move_Move();
+    this.scale = 1;
+    this.type = PolygonMaskType.none;
+    this.url = "";
+  }
+
+  get inlineArrangement() {
+    return this.inline.arrangement;
+  }
+
+  set inlineArrangement(value) {
+    this.inline.arrangement = value;
+  }
+
+  load(data) {
+    var _a;
+
+    if (data !== undefined) {
+      this.draw.load(data.draw);
+      const inline = (_a = data.inline) !== null && _a !== void 0 ? _a : {
+        arrangement: data.inlineArrangement
+      };
+
+      if (inline !== undefined) {
+        this.inline.load(inline);
+      }
+
+      this.move.load(data.move);
+
+      if (data.scale !== undefined) {
+        this.scale = data.scale;
+      }
+
+      if (data.type !== undefined) {
+        this.type = data.type;
+      }
+
+      if (data.enable !== undefined) {
+        this.enable = data.enable;
+      } else {
+        this.enable = this.type !== PolygonMaskType.none;
+      }
+
+      if (data.url !== undefined) {
+        this.url = data.url;
+      }
+
+      if (data.position !== undefined) {
+        this.position = {
+          x: data.position.x,
+          y: data.position.y
+        };
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/BackgroundMask/BackgroundMaskCover.js
+
+class BackgroundMaskCover_BackgroundMaskCover {
+  constructor() {
+    this.color = new OptionsColor();
+    this.opacity = 1;
+  }
+
+  load(data) {
+    if (data !== undefined) {
+      if (data.color !== undefined) {
+        this.color = OptionsColor.create(this.color, data.color);
+      }
+
+      if (data.opacity !== undefined) {
+        this.opacity = data.opacity;
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/BackgroundMask/BackgroundMask.js
+
+class BackgroundMask_BackgroundMask {
+  constructor() {
+    this.cover = new BackgroundMaskCover_BackgroundMaskCover();
+    this.enable = false;
+  }
+
+  load(data) {
+    if (data !== undefined) {
+      if (data.cover !== undefined) {
+        const cover = data.cover;
+        const color = typeof data.cover === "string" ? {
+          color: data.cover
+        } : data.cover;
+        this.cover.load(cover.color !== undefined ? cover : {
+          color: color
+        });
+      }
+
+      if (data.enable !== undefined) {
+        this.enable = data.enable;
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Utils/Presets.js
+class Presets {
+  static getPreset(preset) {
+    return this.presets[preset];
+  }
+
+  static addPreset(presetKey, options) {
+    if (!this.presets[presetKey]) {
+      this.presets[presetKey] = options;
+    }
+  }
+
+}
+Presets.presets = {};
+// CONCATENATED MODULE: ./dist/Classes/Options/Background/Background.js
+
+class Background_Background {
+  load(data) {
+    if (data !== undefined) {
+      if (data.color !== undefined) {
+        this.color = OptionsColor.create(this.color, data.color);
+      }
+
+      if (data.image !== undefined) {
+        this.image = data.image;
+      }
+
+      if (data.position !== undefined) {
+        this.position = data.position;
+      }
+
+      if (data.repeat !== undefined) {
+        this.repeat = data.repeat;
+      }
+
+      if (data.size !== undefined) {
+        this.size = data.size;
+      }
+
+      if (data.opacity !== undefined) {
+        this.opacity = data.opacity;
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Options/Options.js
+
+
+
+
+
+
+
+
+class Options_Options {
+  constructor() {
+    this.absorbers = [];
+    this.background = new Background_Background();
+    this.backgroundMask = new BackgroundMask_BackgroundMask();
+    this.detectRetina = false;
+    this.emitters = [];
+    this.fpsLimit = 30;
+    this.interactivity = new Interactivity_Interactivity();
+    this.particles = new Particles_Particles();
+    this.pauseOnBlur = true;
+    this.polygon = new PolygonMask_PolygonMask_PolygonMask();
+  }
+
+  get fps_limit() {
+    return this.fpsLimit;
+  }
+
+  set fps_limit(value) {
+    this.fpsLimit = value;
+  }
+
+  get retina_detect() {
+    return this.detectRetina;
+  }
+
+  set retina_detect(value) {
+    this.detectRetina = value;
+  }
+
+  load(data) {
+    var _a, _b;
+
+    if (data !== undefined) {
+      if (data.preset !== undefined) {
+        if (data.preset instanceof Array) {
+          for (const preset of data.preset) {
+            this.importPreset(preset);
+          }
+        } else {
+          this.importPreset(data.preset);
+        }
+      }
+
+      if (data.background !== undefined) {
+        this.background.load(data.background);
+      }
+
+      const detectRetina = (_a = data.detectRetina) !== null && _a !== void 0 ? _a : data.retina_detect;
+
+      if (detectRetina !== undefined) {
+        this.detectRetina = detectRetina;
+      }
+
+      const fpsLimit = (_b = data.fpsLimit) !== null && _b !== void 0 ? _b : data.fps_limit;
+
+      if (fpsLimit !== undefined) {
+        this.fpsLimit = fpsLimit;
+      }
+
+      if (data.pauseOnBlur !== undefined) {
+        this.pauseOnBlur = data.pauseOnBlur;
+      }
+
+      this.particles.load(data.particles);
+      this.interactivity.load(data.interactivity);
+      this.polygon.load(data.polygon);
+      this.backgroundMask.load(data.backgroundMask);
+
+      if (data.emitters !== undefined) {
+        if (data.emitters instanceof Array) {
+          this.emitters = data.emitters.map(s => {
+            const tmp = new Emitters_Emitter_Emitter();
+            tmp.load(s);
+            return tmp;
+          });
+        } else {
+          if (this.emitters instanceof Array) {
+            this.emitters = new Emitters_Emitter_Emitter();
+          }
+
+          this.emitters.load(data.emitters);
+        }
+      }
+
+      if (data.absorbers !== undefined) {
+        if (data.absorbers instanceof Array) {
+          this.absorbers = data.absorbers.map(s => {
+            const tmp = new Absorbers_Absorber_Absorber();
+            tmp.load(s);
+            return tmp;
+          });
+        } else {
+          if (this.absorbers instanceof Array) {
+            this.absorbers = new Absorbers_Absorber_Absorber();
+          }
+
+          this.absorbers.load(data.absorbers);
+        }
+      }
+    }
+  }
+
+  importPreset(preset) {
+    const presetOptions = Presets.getPreset(preset);
+
+    if (presetOptions !== undefined) {
+      this.load(presetOptions);
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Container.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Container_Container {
+  constructor(id, params, ...presets) {
+    this.started = false;
+    this.destroyed = false;
+    this.id = id;
+    this.paused = true;
+    this.sourceOptions = params;
+    this.lastFrameTime = 0;
+    this.pageHidden = false;
+    this.retina = new Retina(this);
+    this.canvas = new Canvas_Canvas(this);
+    this.particles = new Classes_Particles_Particles(this);
+    this.polygon = new PolygonMask_PolygonMask(this);
+    this.drawer = new FrameManager(this);
+    this.interactivity = {
+      mouse: {}
+    };
+    this.images = [];
+    this.bubble = {};
+    this.repulse = {
+      particles: []
+    };
+    this.emitters = [];
+    this.absorbers = [];
+    this.options = new Options_Options();
+
+    for (const preset of presets) {
+      this.options.load(Presets.getPreset(preset));
+    }
+
+    if (this.sourceOptions) {
+      this.options.load(this.sourceOptions);
+    }
+
+    this.eventListeners = new EventListeners_EventListeners(this);
+  }
+
+  static requestFrame(callback) {
+    return window.customRequestAnimationFrame(callback);
+  }
+
+  static cancelAnimation(handle) {
+    window.cancelAnimationFrame(handle);
+  }
+
+  play() {
+    if (this.paused) {
+      this.lastFrameTime = performance.now();
+      this.paused = false;
+
+      for (const emitter of this.emitters) {
+        emitter.start();
+      }
+    }
+
+    this.drawAnimationFrame = Container_Container.requestFrame(t => this.drawer.nextFrame(t));
+  }
+
+  pause() {
+    if (this.drawAnimationFrame !== undefined) {
+      for (const emitter of this.emitters) {
+        emitter.stop();
+      }
+
+      Container_Container.cancelAnimation(this.drawAnimationFrame);
+      delete this.drawAnimationFrame;
+      this.paused = true;
+    }
+  }
+
+  densityAutoParticles() {
+    if (!(this.canvas.element && this.options.particles.number.density.enable)) {
+      return;
+    }
+
+    let area = this.canvas.element.width * this.canvas.element.height / 1000;
+
+    if (this.retina.isRetina) {
+      area /= this.retina.pixelRatio * 2;
+    }
+
+    const optParticlesNumber = this.options.particles.number.value;
+    const density = this.options.particles.number.density.area;
+    const particlesNumber = area * optParticlesNumber / density;
+    const particlesCount = this.particles.count;
+
+    if (particlesCount < particlesNumber) {
+      this.particles.push(Math.abs(particlesNumber - particlesCount));
+    } else if (particlesCount > particlesNumber) {
+      this.particles.removeQuantity(particlesCount - particlesNumber);
+    }
+  }
+
+  destroy() {
+    this.stop();
+    this.retina.reset();
+    this.canvas.destroy();
+    delete this.interactivity;
+    delete this.options;
+    delete this.retina;
+    delete this.canvas;
+    delete this.particles;
+    delete this.polygon;
+    delete this.bubble;
+    delete this.repulse;
+    delete this.images;
+    delete this.drawer;
+    delete this.eventListeners;
+    this.destroyed = true;
+  }
+
+  exportImg(callback) {
+    this.exportImage(callback);
+  }
+
+  exportImage(callback, type, quality) {
+    var _a;
+
+    return (_a = this.canvas.element) === null || _a === void 0 ? void 0 : _a.toBlob(callback, type !== null && type !== void 0 ? type : "image/png", quality);
+  }
+
+  exportConfiguration() {
+    return JSON.stringify(this.options, undefined, 2);
+  }
+
+  refresh() {
+    return __awaiter(this, void 0, void 0, function* () {
+      this.stop();
+      yield this.start();
+    });
+  }
+
+  stop() {
+    if (!this.started) {
+      return;
+    }
+
+    this.started = false;
+    this.eventListeners.removeListeners();
+    this.pause();
+    this.images = [];
+    this.particles.clear();
+    this.retina.reset();
+    this.canvas.clear();
+    this.polygon.reset();
+    this.emitters = [];
+    this.absorbers = [];
+    delete this.particles.lineLinkedColor;
+  }
+
+  start() {
+    return __awaiter(this, void 0, void 0, function* () {
+      if (this.started) {
+        return;
+      }
+
+      this.started = true;
+      this.eventListeners.addListeners();
+      yield this.polygon.init();
+
+      if (Utils_Utils.isInArray(ShapeType.char, this.options.particles.shape.type) || Utils_Utils.isInArray(ShapeType.character, this.options.particles.shape.type)) {
+        if (this.options.particles.shape.character instanceof Array) {
+          for (const character of this.options.particles.shape.character) {
+            yield Utils_Utils.loadFont(character);
+          }
+        } else {
+          const character = this.options.particles.shape.character;
+
+          if (character !== undefined) {
+            yield Utils_Utils.loadFont(character);
+          }
+        }
+      }
+
+      if (Utils_Utils.isInArray(ShapeType.image, this.options.particles.shape.type) || Utils_Utils.isInArray(ShapeType.images, this.options.particles.shape.type)) {
+        if (this.options.particles.shape.image instanceof Array) {
+          for (const optionsImage of this.options.particles.shape.image) {
+            yield this.loadImageShape(optionsImage);
+          }
+        } else {
+          yield this.loadImageShape(this.options.particles.shape.image);
+        }
+      }
+
+      this.init();
+      this.play();
+    });
+  }
+
+  loadImageShape(imageShape) {
+    return __awaiter(this, void 0, void 0, function* () {
+      try {
+        this.images.push((yield Utils_Utils.loadImage(imageShape)));
+      } catch (_a) {}
+    });
+  }
+
+  init() {
+    this.retina.init();
+    this.canvas.init();
+    this.particles.init();
+
+    if (this.options.emitters instanceof Array) {
+      for (const emitterOptions of this.options.emitters) {
+        const emitter = new Emitter_Emitter(this, emitterOptions);
+        this.emitters.push(emitter);
+      }
+    } else {
+      const emitterOptions = this.options.emitters;
+      const emitter = new Emitter_Emitter(this, emitterOptions);
+      this.emitters.push(emitter);
+    }
+
+    if (this.options.absorbers instanceof Array) {
+      for (const absorberOptions of this.options.absorbers) {
+        const absorber = new Absorber_Absorber(this, absorberOptions);
+        this.absorbers.push(absorber);
+      }
+    } else {
+      const absorberOptions = this.options.absorbers;
+      const absorber = new Absorber_Absorber(this, absorberOptions);
+      this.absorbers.push(absorber);
+    }
+
+    this.densityAutoParticles();
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/Loader.js
+
+
+
+
+let tsParticlesDom = [];
+class Loader_Loader {
+  static dom() {
+    if (!tsParticlesDom) {
+      tsParticlesDom = [];
+    }
+
+    return tsParticlesDom;
+  }
+
+  static domItem(index) {
+    const dom = Loader_Loader.dom();
+    const item = dom[index];
+
+    if (item && !item.destroyed) {
+      return item;
+    }
+
+    dom.splice(index, 1);
+  }
+
+  static loadFromArray(tagId, params, index) {
+    return __awaiter(this, void 0, void 0, function* () {
+      return Loader_Loader.load(tagId, Utils_Utils.itemFromArray(params, index));
+    });
+  }
+
+  static setFromArray(id, domContainer, params, index) {
+    return __awaiter(this, void 0, void 0, function* () {
+      return Loader_Loader.set(id, domContainer, Utils_Utils.itemFromArray(params, index));
+    });
+  }
+
+  static load(tagId, params) {
+    return __awaiter(this, void 0, void 0, function* () {
+      const domContainer = document.getElementById(tagId);
+
+      if (!domContainer) {
+        return;
+      }
+
+      return this.set(tagId, domContainer, params);
+    });
+  }
+
+  static set(id, domContainer, params) {
+    return __awaiter(this, void 0, void 0, function* () {
+      const dom = Loader_Loader.dom();
+      const oldIndex = dom.findIndex(v => v.id === id);
+
+      if (oldIndex >= 0) {
+        const old = this.domItem(oldIndex);
+
+        if (old && !old.destroyed) {
+          old.destroy();
+          dom.splice(oldIndex, 1);
+        }
+      }
+
+      let canvasEl;
+      let generatedCanvas;
+
+      if (domContainer.tagName === "canvas") {
+        canvasEl = domContainer;
+        generatedCanvas = false;
+      } else {
+        const existingCanvases = domContainer.getElementsByTagName("canvas");
+
+        if (existingCanvases.length) {
+          canvasEl = existingCanvases[0];
+
+          if (!canvasEl.className) {
+            canvasEl.className = Constants.canvasClass;
+          }
+
+          generatedCanvas = false;
+        } else {
+          generatedCanvas = true;
+          canvasEl = document.createElement("canvas");
+          canvasEl.className = Constants.canvasClass;
+          canvasEl.style.width = "100%";
+          canvasEl.style.height = "100%";
+          domContainer.appendChild(canvasEl);
+        }
+      }
+
+      const newItem = new Container_Container(id, params);
+
+      if (oldIndex >= 0) {
+        dom.splice(oldIndex, 0, newItem);
+      } else {
+        dom.push(newItem);
+      }
+
+      newItem.canvas.loadCanvas(canvasEl, generatedCanvas);
+      yield newItem.start();
+      return newItem;
+    });
+  }
+
+  static loadJSON(tagId, jsonUrl) {
+    return __awaiter(this, void 0, void 0, function* () {
+      const response = yield fetch(jsonUrl);
+
+      if (response.ok) {
+        const params = yield response.json();
+
+        if (params instanceof Array) {
+          return Loader_Loader.loadFromArray(tagId, params);
+        } else {
+          return Loader_Loader.load(tagId, params);
+        }
+      } else {
+        console.error(`Error tsParticles - fetch status: ${response.status}`);
+        console.error("Error tsParticles - File config not found");
+      }
+    });
+  }
+
+  static setJSON(id, domContainer, jsonUrl) {
+    return __awaiter(this, void 0, void 0, function* () {
+      const response = yield fetch(jsonUrl);
+
+      if (response.ok) {
+        const params = yield response.json();
+
+        if (params instanceof Array) {
+          return Loader_Loader.setFromArray(id, domContainer, params);
+        } else {
+          return Loader_Loader.set(id, domContainer, params);
+        }
+      } else {
+        console.error(`Error tsParticles - fetch status: ${response.status}`);
+        console.error("Error tsParticles - File config not found");
+      }
+    });
+  }
+
+  static setOnClickHandler(callback) {
+    const dom = Loader_Loader.dom();
+
+    if (dom.length === 0) {
+      throw new Error("Can only set click handlers after calling tsParticles.load() or tsParticles.loadJSON()");
+    }
+
+    for (const domItem of dom) {
+      const el = domItem.interactivity.element;
+
+      if (el) {
+        el.addEventListener("click", callback);
+      }
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/ShapeDrawers/LineDrawer.js
+class LineDrawer {
+  draw(context, particle, radius, _opacity) {
+    context.moveTo(0, -radius / 2);
+    context.lineTo(0, radius / 2);
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/ShapeDrawers/CircleDrawer.js
+class CircleDrawer {
+  draw(context, particle, radius, _opacity) {
+    context.arc(0, 0, radius, 0, Math.PI * 2, false);
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/ShapeDrawers/SquareDrawer.js
+class SquareDrawer {
+  draw(context, particle, radius, _opacity) {
+    context.rect(-radius, -radius, radius * 2, radius * 2);
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/ShapeDrawers/PolygonDrawerBase.js
+class PolygonDrawerBase {
+  draw(context, particle, radius, _opacity) {
+    const start = this.getCenter(particle, radius);
+    const side = this.getSidesData(particle, radius);
+    const sideCount = side.count.numerator * side.count.denominator;
+    const decimalSides = side.count.numerator / side.count.denominator;
+    const interiorAngleDegrees = 180 * (decimalSides - 2) / decimalSides;
+    const interiorAngle = Math.PI - Math.PI * interiorAngleDegrees / 180;
+
+    if (!context) {
+      return;
+    }
+
+    context.beginPath();
+    context.translate(start.x, start.y);
+    context.moveTo(0, 0);
+
+    for (let i = 0; i < sideCount; i++) {
+      context.lineTo(side.length, 0);
+      context.translate(side.length, 0);
+      context.rotate(interiorAngle);
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/ShapeDrawers/TriangleDrawer.js
+
+class TriangleDrawer_TriangleDrawer extends PolygonDrawerBase {
+  getSidesData(particle, radius) {
+    return {
+      count: {
+        denominator: 2,
+        numerator: 3
+      },
+      length: radius * 2
+    };
+  }
+
+  getCenter(particle, radius) {
+    return {
+      x: -radius,
+      y: radius / 1.66
+    };
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/ShapeDrawers/StarDrawer.js
+
+class StarDrawer_StarDrawer extends PolygonDrawerBase {
+  getSidesData(particle, radius) {
+    var _a;
+
+    const polygon = particle.shapeData;
+    const sides = (_a = polygon === null || polygon === void 0 ? void 0 : polygon.sides) !== null && _a !== void 0 ? _a : 5;
+    return {
+      count: {
+        denominator: 2,
+        numerator: sides
+      },
+      length: radius * 2 * 2.66 / (sides / 3)
+    };
+  }
+
+  getCenter(particle, radius) {
+    var _a;
+
+    const polygon = particle.shapeData;
+    const sides = (_a = polygon === null || polygon === void 0 ? void 0 : polygon.sides) !== null && _a !== void 0 ? _a : 5;
+    return {
+      x: -radius * 2 / (sides / 4),
+      y: -radius / (2 * 2.66 / 3.5)
+    };
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/ShapeDrawers/PolygonDrawer.js
+
+class PolygonDrawer_PolygonDrawer extends PolygonDrawerBase {
+  getSidesData(particle, radius) {
+    var _a, _b;
+
+    const polygon = particle.shapeData;
+    const sides = (_b = (_a = polygon === null || polygon === void 0 ? void 0 : polygon.sides) !== null && _a !== void 0 ? _a : polygon === null || polygon === void 0 ? void 0 : polygon.nb_sides) !== null && _b !== void 0 ? _b : 5;
+    return {
+      count: {
+        denominator: 1,
+        numerator: sides
+      },
+      length: radius * 2.66 / (sides / 3)
+    };
+  }
+
+  getCenter(particle, radius) {
+    var _a, _b;
+
+    const polygon = particle.shapeData;
+    const sides = (_b = (_a = polygon === null || polygon === void 0 ? void 0 : polygon.sides) !== null && _a !== void 0 ? _a : polygon === null || polygon === void 0 ? void 0 : polygon.nb_sides) !== null && _b !== void 0 ? _b : 5;
+    return {
+      x: -radius / (sides / 3.5),
+      y: -radius / (2.66 / 3.5)
+    };
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/ShapeDrawers/TextDrawer.js
+
+class TextDrawer_TextDrawer {
+  draw(context, particle, radius, _opacity) {
+    const character = particle.shapeData;
+
+    if (character === undefined) {
+      return;
+    }
+
+    const textData = character.value;
+
+    if (textData === undefined) {
+      return;
+    }
+
+    const textParticle = particle;
+
+    if (textParticle.text === undefined) {
+      if (textData instanceof Array) {
+        textParticle.text = Utils_Utils.itemFromArray(textData, particle.randomIndexData);
+      } else {
+        textParticle.text = textData;
+      }
+    }
+
+    const text = textParticle.text;
+    const style = character.style;
+    const weight = character.weight;
+    const size = Math.round(radius) * 2;
+    const font = character.font;
+    const fill = particle.fill;
+    context.font = `${style} ${weight} ${size}px "${font}"`;
+    const pos = {
+      x: -radius / 2,
+      y: radius / 2
+    };
+
+    if (fill) {
+      context.fillText(text, pos.x, pos.y);
+    } else {
+      context.strokeText(text, pos.x, pos.y);
+    }
+  }
+
+}
+// CONCATENATED MODULE: ./dist/Classes/ShapeDrawers/ImageDrawer.js
+class ImageDrawer {
+  draw(context, particle, radius, opacity) {
+    var _a, _b;
+
+    if (!context) {
+      return;
+    }
+
+    const imgObj = (_b = (_a = particle.image) === null || _a === void 0 ? void 0 : _a.data) === null || _b === void 0 ? void 0 : _b.obj;
+
+    if (!imgObj) {
+      return;
+    }
+
+    let ratio = 1;
+
+    if (particle.image) {
+      ratio = particle.image.ratio;
+    }
+
+    const pos = {
+      x: -radius,
+      y: -radius
+    };
+    context.globalAlpha = opacity;
+    context.drawImage(imgObj, pos.x, pos.y, radius * 2, radius * 2 / ratio);
+    context.globalAlpha = 1;
+  }
+
+}
+// CONCATENATED MODULE: ./dist/index.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class dist_Main {
+  constructor() {
+    this.initialized = false;
+
+    if (typeof window !== "undefined" && window) {
+      window.customRequestAnimationFrame = (() => {
+        return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || (callback => window.setTimeout(callback, 1000 / 60));
+      })();
+
+      window.customCancelRequestAnimationFrame = (() => {
+        return window.cancelAnimationFrame || window.webkitCancelRequestAnimationFrame || window.mozCancelRequestAnimationFrame || window.oCancelRequestAnimationFrame || window.msCancelRequestAnimationFrame || clearTimeout;
+      })();
+    }
+
+    const squareDrawer = new SquareDrawer();
+    const textDrawer = new TextDrawer_TextDrawer();
+    CanvasUtils_CanvasUtils.addShapeDrawer(ShapeType.line, new LineDrawer());
+    CanvasUtils_CanvasUtils.addShapeDrawer(ShapeType.circle, new CircleDrawer());
+    CanvasUtils_CanvasUtils.addShapeDrawer(ShapeType.edge, squareDrawer);
+    CanvasUtils_CanvasUtils.addShapeDrawer(ShapeType.square, squareDrawer);
+    CanvasUtils_CanvasUtils.addShapeDrawer(ShapeType.triangle, new TriangleDrawer_TriangleDrawer());
+    CanvasUtils_CanvasUtils.addShapeDrawer(ShapeType.star, new StarDrawer_StarDrawer());
+    CanvasUtils_CanvasUtils.addShapeDrawer(ShapeType.polygon, new PolygonDrawer_PolygonDrawer());
+    CanvasUtils_CanvasUtils.addShapeDrawer(ShapeType.char, textDrawer);
+    CanvasUtils_CanvasUtils.addShapeDrawer(ShapeType.character, textDrawer);
+    CanvasUtils_CanvasUtils.addShapeDrawer(ShapeType.image, new ImageDrawer());
+    CanvasUtils_CanvasUtils.addShapeDrawer(ShapeType.images, new ImageDrawer());
+  }
+
+  init() {
+    if (!this.initialized) {
+      this.initialized = true;
+
+      if (typeof window !== "undefined" && window) {
+        const tsParticles = this;
+
+        window.particlesJS = (tagId, params) => {
+          return tsParticles.load(tagId, params);
+        };
+
+        window.particlesJS.load = (tagId, pathConfigJson, callback) => {
+          tsParticles.loadJSON(tagId, pathConfigJson).then(container => {
+            if (container) {
+              callback(container);
+            }
+          });
+        };
+
+        window.particlesJS.setOnClickHandler = callback => {
+          tsParticles.setOnClickHandler(callback);
+        };
+
+        window.pJSDom = () => {
+          return window.tsParticles.dom();
+        };
+      }
+    }
+  }
+
+  loadFromArray(tagId, params, index) {
+    return __awaiter(this, void 0, void 0, function* () {
+      return Loader_Loader.loadFromArray(tagId, params, index);
+    });
+  }
+
+  load(tagId, params) {
+    return __awaiter(this, void 0, void 0, function* () {
+      return Loader_Loader.load(tagId, params);
+    });
+  }
+
+  loadJSON(tagId, pathConfigJson) {
+    return Loader_Loader.loadJSON(tagId, pathConfigJson);
+  }
+
+  setOnClickHandler(callback) {
+    Loader_Loader.setOnClickHandler(callback);
+  }
+
+  dom() {
+    return Loader_Loader.dom();
+  }
+
+  domItem(index) {
+    return Loader_Loader.domItem(index);
+  }
+
+  addShape(shape, drawer) {
+    let customDrawer;
+
+    if (typeof drawer === "function") {
+      customDrawer = {
+        draw: drawer
+      };
+    } else {
+      customDrawer = drawer;
+    }
+
+    CanvasUtils_CanvasUtils.addShapeDrawer(shape, customDrawer);
+  }
+
+  addPreset(preset, options) {
+    Presets.addPreset(preset, options);
+  }
+
+}
+
+const tsParticles = new dist_Main();
+
+
+/***/ })
+/******/ ])));

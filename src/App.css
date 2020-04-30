@@ -1,0 +1,20 @@
+@font-face {
+  font-family: Doodle;
+  src: url("./styles/doodle-bold.ttf");
+}
+
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 7px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  html {
+    font-size: 8px;
+  }
+}
+@media only screen and (min-width: 993px) {
+  html {
+    font-size: 10px;
+  }
+}

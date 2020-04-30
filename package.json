@@ -1,0 +1,69 @@
+{
+  "name": "twilio",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "@trt2/gsm-charset-utils": "^1.0.13",
+    "axios": "^0.19.2",
+    "bcryptjs": "^2.4.3",
+    "config": "^3.3.1",
+    "cors": "^2.8.5",
+    "cron": "^1.8.2",
+    "moment-timezone": "^0.5.28",
+    "mongodb": "^3.5.6",
+    "mongodb-cron": "^1.7.0",
+    "mongoose": "^5.9.10",
+    "node-cron": "^2.0.3",
+    "node-fetch": "^2.6.0",
+    "node-sass": "^4.14.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-emoji-rain": "^1.0.5",
+    "react-grid-system": "^6.3.1",
+    "react-particles-js": "^3.2.0",
+    "react-scripts": "3.4.1",
+    "react-sparkles": "^1.0.0",
+    "react-timezone-picker": "^1.0.8",
+    "sentiment": "^5.0.2",
+    "string-strip-html": "^4.4.0",
+    "validation": "0.0.1",
+    "wired-elements": "^2.0.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "server": "node-env-run server --exec nodemon | pino-colada",
+    "dev": "run-p server start"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-pino-logger": "^4.0.0",
+    "node-env-run": "^3.0.2",
+    "nodemon": "^2.0.3",
+    "npm-run-all": "^4.1.5",
+    "pino-colada": "^1.6.1",
+    "twilio": "^3.42.2"
+  },
+  "proxy": "http://localhost:3001"
+}
