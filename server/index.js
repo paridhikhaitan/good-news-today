@@ -147,4 +147,6 @@ app.post("/api/messages", (req, res) => {
     });
 });
 
-app.listen(8082, () => console.log("Express server is on localhost:8082"));
+app.listen(process.env.PORT || 8082, () =>
+  console.log("Express server is on localhost:8082")
+);
