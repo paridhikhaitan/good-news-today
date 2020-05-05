@@ -54,7 +54,7 @@ var job = new CronJob(
           var yesterday = new Date(today);
           yesterday.setDate(yesterday.getDate() - 1);
 
-          if (time === "08:55") {
+          if (time === "09:00") {
             queryNewsArticles(person, yesterday.toISOString().substr(0, 10));
           }
         });
