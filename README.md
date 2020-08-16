@@ -11,3 +11,5 @@
 2. Automated scheduling via node-cron.
 3. Querying news articles based on users location.
 4. Daily SMS at 9AM using Twilio's Programmable SMS API
+
+## Read the complete article on DEV : [https://dev.to/paridhikhaitan/good-news-today-a-covid-19-good-news-delivery-app-512c](Good News Today!)
